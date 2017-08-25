@@ -45,6 +45,135 @@ Karma with Jasmine:
       end to end testing.
 
 
+Installation Of Karma:
+----------------------
+>npm install -g karma
+
+
+Testing Controller:
+------------------
+
+var app = angular.module("app",[]);
+
+app.controller("ctrl",ctrl);
+function ctrl($scope){
+    $scope.var_one = "AngularJS";
+}
+
+
+app.controller("test",test){
+    $scope.my_fun = function(){
+        return "Welcome";
+    };
+};
+
+
+//write the test spec.
+
+karma.conf.js
+-------------
+
+//define the test suite.
+describe("testing the controller",function(){
+    var $controller;
+    //accessing the app module to testing environment.
+    module("app");
+    //accessing the controller to test suite.
+    inject("accessing the controllers",function(_$controller_){
+        $controller = _$controller_;
+    });
+)};
+
+
+it("unit test case one",function(){
+    var result = $controller.get("ctrl",{$scope:$scope});
+    expect(result).equalTo("AngularJS")
+        "/******Unit Test Success*****/"
+
+    "/************Unit Test case Fail*****/"
+
+
+});
+
+
+it("testing the test controller",function(){
+    var result = $controller.get("test",{$scope:$scope});
+    var value= result.my_fun();
+
+    expect(value).equalTo("Welcome")
+        /****Test Case Success !!!******/
+
+    /***Test Case Failed****/
+
+});
+
+
+
+>karma start
+
+
+
+
+
+Testing the Service:
+--------------------
+
+var app = angular.module("app",[]);
+app.factory("my_service",my_service);
+function my_service(){
+    return ["AngularJS","Angular4","NodeJS","MongoDB"];
+}
+
+
+describe("testing service",function(){
+    var testServices;
+
+    module("app");
+    inject("testing service...",function(injector){
+        testServices=injector;
+    });
+
+});
+
+it("hello test msg",function(){
+    var array = testServices.get("my_service");
+
+    array.contains("AngularJS");
+    array.contains("Angular4");
+    array.contains("NodeJS");
+    array.contains("MongoDB");
+    array.equalsTo(4);
+        /****Test Case Success !****/
+    /****Test Case Fail !****/
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
