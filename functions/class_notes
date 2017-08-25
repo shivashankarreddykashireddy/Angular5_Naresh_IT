@@ -1,0 +1,20 @@
+functions:
+    - functions are the set of statements
+    - functions are meant for implementing the bussiness logic
+    - by using we can reuse the business logic
+    - We have two types of functions
+       1.Named JS Functions
+       2.Anonymous JS Functions
+
+   Named JS Functions: THe function with the name called as named JS Functions
+   Anonymous JS Functions: The functions without a name called as Anonymous Functions
+
+
+Syntax.
+    //create the function
+    function fun_name(){
+        //Business Logic.
+    };
+
+    //calling the function.
+    fun_name();

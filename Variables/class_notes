@@ -56,7 +56,7 @@ Variables:
  document .getElementById("third_h1").innerHTML = "Data from Cassandra DB soon..!";
 
 
- - we can include the javascript ibto webpage by using "<script></script>" tag.
+ - we can include the javascript into webpage by using "<script></script>" tag.
 
  Ex.
 
@@ -65,6 +65,32 @@ Variables:
         //Business Logic.
 
     </script>
+
+
+ - we have two types of variables.
+
+       1. global variables
+
+       2. local variables
+
+1. Global variables are available to application scope.
+    Ex.4
+        <script type="text/javascript">
+            var data = "Data From DN Soon....";
+            var name="hello";
+
+            if(name=="hello"){
+                console.log(data);
+                var var_one = "i am local variable";
+                console.log(var_one);
+            }
+
+            console.log(var_one);
+
+        </script>
+
+2. local variables are available perticular block in application.
+
 
 
 
