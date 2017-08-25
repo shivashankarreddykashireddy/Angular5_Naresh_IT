@@ -248,8 +248,23 @@ function loginController($scope,loginService){
 </form>
 
 
+8. Implement the Single Page Application
+
+create the target templates
+
+----------------
+templates
+    login.html
+    home.html
+----------------
 
 
+home.html
+---------
+<h1>{{var_one}}</h1>
+
+
+create
 
 
 
