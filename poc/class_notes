@@ -250,21 +250,72 @@ function loginController($scope,loginService){
 
 8. Implement the Single Page Application
 
-create the target templates
+    create the target templates
 
-----------------
-templates
-    login.html
+    ----------------
+    templates
+        login.html
+        home.html
+    ----------------
+
+
     home.html
-----------------
+
+    <h1>{{var_one}}</h1>
 
 
-home.html
----------
-<h1>{{var_one}}</h1>
+    create the controllers
+
+    -------------------
+    loginController.js
+    homeController.js
+    -------------------
+
+    homeController.js
+
+    app.controller("homeController",homeController);
+    function homeController($scope){
+        $scope.var_one = "Welcome to Home Page !";
+    }
+
+    implement the following mapping.
+
+    -------------------------
+    login.html ===> loginController
+    home.html ===> homeController
+    --------------------------
 
 
-create
+    config.js
+    -
+    app.config(config);
+    function config($stateProvider,$urlRouterProvider){
+        $stateProvider.state("login" , {url:"/login" , templateUrl:"templates/login.html",controller:"loginController"})
+                      .state("home" , {url:"/home" , templateUrl:"templates/home.html",controller:"homeController"});
+        $urlRouterProvider.otherwise("/login");
+    };
+
+    create the source template
+    --------------------------
+    index.html
+    ----------
+    <html ng-app="app">
+        <div ui-view></div>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
