@@ -1,0 +1,224 @@
+
+    - Services in angularjs used to provide the common business logic
+      to controllers.
+
+    - By using Services we can reuse the Business Logic.
+
+    - In general it's recomended to write the business logic in services.
+
+    - We have two types of Services
+
+        1. predefined Services
+
+            - the services given by angular framework called as
+              predefined services.
+
+                1. $http
+                2. $q
+                3. $timeout
+                4. $location
+                5. $interval
+
+        2. Custom Services
+
+            - The Services Developed by developer called as
+              Custom Services.
+
+            - In AngularJS, we can create the Custom Services in five
+              ways.
+
+                1. factory()
+
+                2. service()
+
+                3. value()
+
+                4. constant()
+
+                5. provider()
+
+
+
+Creating the Custom Service by using factory()
+----------------------------------------------
+    - factory() is the predefined function used to create the Custom
+      Services.
+
+    - factory() can interact with the external javascript files.
+
+    - factory() can return the results directly.
+
+      function demo_one(){
+           this.my_fun = function(){
+                return "Data From MVC Soon...!";
+           }
+      }
+
+      app.factory("my_service",my_service);
+      function my_service(){
+        return new demo_one().my_fun();
+      }
+
+
+      app.controller("ctrl_one",ctrl_one);
+      function ctrl_one($scope,my_service) {
+        $scope.var_one = my_service;
+      }
+
+      app.controller("ctrl_two",ctrl_two);
+      function ctrl_two($scope,my_service) {
+         $scope.var_two = my_service;
+      }
+
+
+
+creating the custom service by using service()
+----------------------------------------------
+
+- service() is the predefined function used to create the custom services.
+
+- service() depending on custom functions to provide the services to
+  controllers.
+
+
+Ex.
+    app.service("my_service",my_service);
+    function my_service(){
+
+        this.fun_one = function(){
+            return "Data From Java....!";
+        }
+
+        this.fun_two = function(){
+            return "Data From MVC....!";
+        }
+    }
+
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service.fun_one();
+    }
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+         $scope.var_two = my_service.fun_two();
+    }
+
+
+
+creating the custom service by using value()
+--------------------------------------------
+    - we can create the custom service in the form of "key&value" pairs
+      by using value() function.
+
+    - in value() function overriding will be happen.
+
+    Ex.
+        app.value("my_service","First Value");
+        app.value("my_service","Second Value");
+
+            app.controller("ctrl_one",ctrl_one);
+            function ctrl_one($scope,my_service){
+                $scope.var_one = my_service;
+            }
+
+            app.controller("ctrl_two",ctrl_two);
+            function ctrl_two($scope,my_service){
+                 $scope.var_two = my_service;
+            }
+
+O/P :
+
+        Second Value
+        Second Value
+
+
+creating the custom service by using constant()
+--------------------------------------------
+    - we can create the custom service in the form of "key&value" pairs
+      by using constant() function.
+
+    - in constant() function overriding won't be happen.
+
+    Ex.
+        app.constant("my_service","First Value");
+        app.constant("my_service","Second Value");
+
+            app.controller("ctrl_one",ctrl_one);
+            function ctrl_one($scope,my_service){
+                $scope.var_one = my_service;
+            }
+
+            app.controller("ctrl_two",ctrl_two);
+            function ctrl_two($scope,my_service){
+                 $scope.var_two = my_service;
+            }
+
+O/P :
+
+        First Value
+        First Value
+
+
+creating the custom service by using provider()
+-----------------------------------------------
+    - provider() is the predefined function used to create the
+      custom services.
+
+    - provider() depending on "$get()" function to provide the services
+      to controllers.
+
+        Ex.
+            this.$get = function(){
+                //Business Logic
+            }
+
+    - provider() function can interact with configuration phase
+      of angular application.
+
+    Ex.
+        app.config(config);
+        function config(){
+            //Defination.
+        }
+
+app.config(config);
+function config(my_serviceProvider){
+    my_serviceProvider.db_password="root_two";
+}
+
+
+app.provider("my_service",my_service);
+function my_service(){
+    this.db_password="root_one";
+    this.$get = function(){
+        return this.db_password;
+    }
+}
+
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+     $scope.var_one = my_service;
+}
+
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+     $scope.var_two = my_service;
+}
+
+O/P:
+    root_two
+    root_two
+
+
+
+
+
+$http:
+------
+    - $http is the predefined service used to interact with the servers
+      via http protocol.
+
+
+
