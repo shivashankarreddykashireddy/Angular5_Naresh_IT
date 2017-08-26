@@ -44,9 +44,81 @@ Karma with Jasmine:
     - checking whole application with different end points (api points, physical connections) called as
       end to end testing.
 
+Installation Of Karma
+---------------------
+>npm install -g karma
+
+
+Testing the Controllers:
+------------------------
+
+var app = angular.module("app",[]);
+
+app.controller("ctrl",ctrl);
+function ctrl($scope){
+    $scope.var_one ="Welcome";
+}
+
+
+karma.conf.js
+-------------
+
+describe("testing the controller", function(){
+    var $controller;
+    inject("making the availability of controllers",function(_$controller_){
+        module("app");
+        $controller=_$controller_;
+    });
+});
 
 
 
+it("unit test case one",function(){
+    var result = $controller.get("ctrl",{$scope:$scope});
+    expect(result).equalsTo("Welcome")
+        /*******Unit Test Case Success*********/
+
+    /*****Test case fail*******/
+});
 
 
+>karma start
+
+
+Testing the Services:
+---------------------
+var app = angular.module("app",[]);
+
+app.service("my_service",my_service);
+function my_service(){
+   this.my_fun = function(){
+        return ["Hello_1","Hello_2","Hello_3","Hello_4","Hello_5"];
+   };
+};
+
+
+describe("testing the services",function(){
+    var testServices;
+    inject("testing of my_fun",function(injector){
+        module("app");
+        testServices = injector;
+    });
+});
+
+it("unit test case one",function(){
+    var testServices = testServices.get("my_service");
+    var array = testServices.my_fun();
+
+    array.contains("Hello_1");
+    array.contains("Hello_2");
+    array.contains("Hello_3");
+    array.contains("Hello_4");
+    array.contains("Hello_5");
+    array.equalsTo(5);
+        /******Unit Test Case Success*****/
+
+    /****Test Case Fail*****/
+});
+
+>karma start
 
