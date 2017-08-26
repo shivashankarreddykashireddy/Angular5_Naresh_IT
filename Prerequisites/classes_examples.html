@@ -20,7 +20,7 @@
 
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     
     function class_one(arg1,arg2) {
         this.result = arg1+arg2;
@@ -50,7 +50,44 @@
 
 
     
+</script>-->
+
+
+<script>
+
+    function class_one(){
+        this.fun_one = function () {
+            return new class_two();
+        };
+    };
+
+    function class_two(){
+        this.fun_two = function () {
+            return{
+                "emp":[
+                        {"e_id":111,"e_name":"Hello_1","e_sal":50000}
+                ]
+            };
+        };
+    };
+
+
+    //create the class_one object
+    var obj_one = new class_one();
+
+    //create the class_two object.
+    var obj_two = obj_one.fun_one();
+
+    //call the fun_two (class_two)
+    var json_obj = obj_two.fun_two();
+    document.write("<h1>"+
+        json_obj.emp[0].e_id+"...."+
+        json_obj.emp[0].e_name+"..."+
+        json_obj.emp[0].e_sal+"</h1>");
+
 </script>
+
+
 
 
 

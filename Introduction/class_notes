@@ -1,0 +1,91 @@
+Introduction:
+
+    - bower.
+
+    - gulp
+
+    - what is AngularJS
+
+    - Advantages Of AngularJS
+
+    - Disadvantages Of AngularJS
+
+    - key features of AngularJS
+
+    - Comparision Of AngularJS - Angular4
+
+                     AngularJS - reactJS
+
+                     AngularJS - NodeJS
+
+    - Interview Q&A
+
+bower:
+-----
+    - bower is the automation tool used to download the required
+      dependencies to develop web application.
+
+    - bower is the automation tool provided by nodejs.
+
+installation of bower:
+----------------------
+>npm install -g bower
+
+[Note : automatically bower will install with the following
+        version
+
+        -- bower@1.8.0
+]
+
+
+bower component:
+----------------
+    - "bower.json" file called as bower component.
+
+    - this component used to maintain the required dependencies
+      to develop web application.
+
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"latest",
+        "bootstrap":"latest"
+            --
+            --
+            --
+    }
+}
+
+execution of bower component:
+-----------------------------
+>bower install
+
+installation of dependencies dynamically
+----------------------------------------
+>bower install bootstrap --save
+
+uninstall the dependencies dynamically
+--------------------------------------
+>bower uninstall angular --save
+
+know the available dependencies in project
+------------------------------------------
+>bower list
+
+
+
+angular framework path given by bower:
+--------------------------------------
+> bower_components/angular/angular.min.js
+
+
+bootstrap framework path given by bower:
+----------------------------------------
+> bower_components/bootstrap/dist/css/bootstrap.min.css
+
+
+jQuery path given by bower:
+---------------------------
+> bower_components/jquery/dist/jquery.min.js
