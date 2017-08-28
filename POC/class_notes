@@ -1,0 +1,84 @@
+1. Design the database.
+Ex.
+    mysql
+
+
+>create schema poc;
+
+>use poc;
+
+>create table login_details(uname varchar(20),upwd varchar(20));
+
+>insert into login_details values('admin','admin');
+
+>select * from login_details;
+
+
+2. Implement the Node Application for Authentication
+
+//import express
+//rest api
+var express = require("express");
+
+//import mysql
+//interact with the mysql database.
+var mysql = require("mysql");
+
+
+//import jwt-simple
+//to maintain the token based authentication system.
+var jwt = require("jwt-simple");
+
+
+//import body-parser
+//to set the MIME Type.
+var bodyparser = require("body-parser");
+
+
+//connection object
+var connection = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"root",
+    database : "poc"
+});
+
+
+//connect to database.
+connection.connect();
+
+
+//create array to store the tokens
+var tokensArray=[];
+
+//POST Request
+app.post("/login",function(req,res){
+    var uname = req.body.uname;
+    var upwd = req.body.upwd;
+
+    connection.query("select uname from login_details
+                      where uname='"+uname+"
+                      'and upwd=''+upwd+"'",
+    function(err,recordsArray,fields){
+        if(recordsArray.length>0){
+            var token = jwt.encode({'uname':uname},'hr@nareshit.in');
+            tokensArray.push(token);
+            res.send({'login':'success','token':token});
+        }else{
+            res.send({'login':'fail'});
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
