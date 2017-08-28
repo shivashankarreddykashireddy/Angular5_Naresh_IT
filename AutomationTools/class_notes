@@ -150,7 +150,7 @@ Modules in Gulp:
     - this module used to minify the html files.
 
 4. gulp-minify-css
-     - this module used o minify the css files.
+     - this module used to minify the css files.
 
 5. gulp-browsersync
         - this module used to sync the frontend changes with browser.
