@@ -289,40 +289,203 @@ Step 4:
 
 >gulp
 
+AngularJS
+---------
+    - AngularJS is a Client Side JavaScript Framework.
+
+    - AngularJS Follows the MVC Design Pattern.
+
+        M - Model
+            - javascript variables called as model in angularjs.
+
+            Ex.
+                var data = "data from database soon...!";
+
+        [Note : where "data" variable called as model in angularjs]
 
 
+        V - view
+
+            - we can use html,html5 or Jade as the View in angularjs.
+
+        C - Controller
+
+            - javascript functions called as controllers in
+              angularjs.
+
+            Ex.
+                function my_fun(){
+                    //Business Logic
+                }
+        [Note : where "my_fun()" called as controller in angularjs]
+
+    - angularjs released by the google.
 
 
+Advantages of AngularJS:
+-----------------------
+
+1. AngularJS supports modules.
+
+    Module : collection of predefined classes implementations called as
+             module.
 
 
+    1. ngAnimate
+        - this module used to implement the animations in angular
+          applications.
+
+    2. ngStorage
+        - this module used to work with the Storages.
+        - AngularJS supports two types of storages.
+            1. localStorage
+            2. sessionStorage
+
+        localStorage : as a developer we must destroy the
+                       localStorage explicitely.
+
+        sessionStorage: when ever we "close the browser" /
+                        "opens the new tab" automatically we will lost
+                        the data.
+
+    3. ngMessages
+        - this module used to handle the client side form validations.
+
+    4. ngRoute
+        - loading the target template to source template in single page
+          application called as routing.
+
+        - we can implement the routing in single page application
+          by using ngRoute module.
+
+        - ngRoute module is the native module.
+
+        - now a days we are not using using ngRoute module while
+          implementing the single page applications.
+
+        - ngRoute module is the deprecated module.
 
 
+    5. ui.router
+        - this module used to implement the routing in single page
+          application.
+
+        - ui.router module is the 3rd party module.
+
+        - now a days all most all the projects using "ui.router"
+          module because of it's advantages.
+
+Ex.
+
+    implement the angular application with the following features
+
+    1. Animations Support
+
+    2. Validations Support
+
+    3. SPA - ui.router
+
+    4. Storages Support.
+
+index.html
+----------
+<!DOCTYPE html>
+<html ng-app="app">
+
+    //We can Develop Animations, Routing , Validations and
+      Storages
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",["ngAnimate",
+                                        "ngMessages",
+                                        "ngStorage",
+                                        "ui.router"]);
+    </script>
+</html>
 
 
+1. ng-app is the predefined directive used to assign the logical
+   name for the web application.
+
+   Ex.
+    ng-app="app"
+
+2. where "app" is the logical name of web application.
 
 
+3. "angular" is the predefined class in "angular.min.js" file.
+
+4. "module" is the predefined function in angular class and taking
+    two parameters
+
+        1. logical name of web application
+
+        2. array of dependencies.
+
+5. "module" will return javascript object and this object used to
+    implement the controllers, services, filters, directives...
+
+    Ex.
+        var app = angular.module("app",[]);
 
 
+2. by using angularjs, we can directly work with the HTML DOM.
+--------------------------------------------------------------
+
+    - DOM Stands for Document Object Model.
 
 
+Ex. Copy the data from "one div" to "another div" by using HTML &
+    JavaScript.
+
+index.html
+----------
+
+<html>
+    <div id="div_one">Hello</div>
+    <div id="div_two"></div>
+    <script>
+        document.getElementById("div_two").innerHTML =
+        document.getElementById("div_one").value;
+    </script>
+</html>
 
 
+[Note : as a html & javascript developer we must dependent
+        on javascript to manipulate the DOM]
 
 
+Ex.copy the data from "one div" to "another div" by using "angularjs".
+
+index.html
+----------
+<html ng-app>
+    <div ng-model="div_one">Hello</div>
+    <div ng-bind="div_one"></div>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+1. in the above application we have following predefined directives
+
+    1. ng-app
+    2. ng-model
+    3. ng-bind
 
 
+2. angular framework starts the execution from "ng-app" directive.
 
 
+3. "ng-model" directive internally creates the object in heap memory
+    with application data.
 
 
+4. "ng-bind" directive binds the application data (model data) to the
+    view.
 
 
-
-
-
-
-
-
+[Note : as a angular developer we can directly manipulate the dom
+        without depending on javascript]
 
 
 
