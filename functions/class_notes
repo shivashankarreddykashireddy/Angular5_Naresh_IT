@@ -1,3 +1,6 @@
+"http://github.com/ajsnaresh/AJS_Classes.git"
+Branch : Node_Classes
+
 functions:
     - functions are the set of statements
     - functions are meant for implementing the business logic
@@ -65,6 +68,18 @@ Syntax.
 
 
 
+Anonymous functions:
+--------------------
+    - The function without a name called as Anonymous functions
+
+Syntax.
+    //creating the anonymous function
+    var fun_one = function(){
+        //Business Logic.
+    };
+
+    //call the anonymous function
+    fun_one();
 
 
 
