@@ -72,6 +72,154 @@ app.post("/login",function(req,res){
 
 
 
+3. implement the loginService.
+
+-------
+services
+    loginService.js
+-------
+app.service("loginService",loginService);
+function loginService($http){
+    this.authenicate = function(obj){
+        return $http.post("http://localhost:8080/login",obj).then(function(posRes){
+            return posRes;
+        },function(errRes){
+            return errRes;
+        });
+    }
+}
+
+Step 4:
+    implement the single page application
+
+----------------
+POC
+    templates
+        login.html
+        home.html
+
+    controllers
+        loginController.js
+        homeController.js
+
+    app.js
+
+    config.js
+
+    index.html
+
+------------------------
+login.html
+-
+<form ng-submit="login_details()">
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="obj.uname">
+
+    <br><br>
+    <label>Upwd.<label>&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="obj.upwd">
+
+    <br><br>
+    <input type="submit">
+</form>
+
+
+home.html
+---------
+<h1>{{var_one}}<h1>
+
+
+loginController.js
+-
+app.controller("loginController",loginController);
+function loginController($scope,loginService,$localStorage,$location){
+    $scope.obj={};
+    $scope.login_details =  function(){
+        loginService.authenticate($scope.obj).then(function(res){
+            console.log(res);
+        });
+    }
+}
+
+homeController.js
+-
+app.controller("homeController",homeController);
+function homeController($scope){
+    $scope.var_one="Welcome to Home Page !";
+}
+
+config.js
+---------
+app.config(config);
+function config($stateProvider,$urlRouterProvider){
+    $stateProvider.state("login",{
+        url:"/login",
+        templateUrl:"templates/login.html",
+        controller:"loginController"
+    })
+    .state("home",{
+            url:"/home",
+            templateUrl:"templates/home.html",
+            controller:"homeController"
+    });
+    $urlRouterProvider.otherwise("/login");
+}
+
+app.js
+------
+var app = angular.module("app",["ui.router","ngStorage"]);
+
+
+index.html
+----------
+<div ui-view></div>
+
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"~1.6.0",
+        "ngstorage":"latest",
+        "angular-ui-router":"~0.2.18"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
