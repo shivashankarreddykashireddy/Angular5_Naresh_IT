@@ -185,14 +185,45 @@ bower.json
     }
 }
 
+5. implement the Nested Routing keys in home.html file
+------------------------------------------------------
+<a ui-sref=".contact"><b>Contact</b></a>&emsp;&emsp;&emsp;&emsp;
+<a ui-sref=".about"><b>About</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;
+<a ui-sref=".portfolio"><b>Portfolio</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;
+<button ng-click="logout()">Logout</button>
+<br><br>
+<div ui-view></div>
 
 
+6. implement the logout functionality with the help of homeController.js
+------------------------------------------------------------------------
+app.controller("homeController",homeController);
+function homeController($scope,$localStorage,$location) {
+    $scope.logout = function () {
+        delete $localStorage.poc;
+        $location.path("/login");
+    };
+};
 
 
+7. implement the interceptors to handle wrong routings
+-------------------------------------------------------
+
+    - interceptors will execute before each routing.
+
+    - "$stateChangeStart" is the interceptor used to handle the wrong routings in application.
+
+    - in genaral we will implement interceptors by using "run()" function
 
 
-
-
+app.run(run).config(config);
+function run($rootScope,$localStorage,$location) {
+    $rootScope.$on("$stateChangeStart",function (event) {
+        if(!$localStorage.poc){
+            $location.path("/login");
+        }
+    });
+};
 
 
 

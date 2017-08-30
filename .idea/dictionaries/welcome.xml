@@ -5,6 +5,7 @@
       <w>bodyparser</w>
       <w>minifies</w>
       <w>minify</w>
+      <w>sref</w>
       <w>uglify</w>
       <w>uname</w>
       <w>upwd</w>
