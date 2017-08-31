@@ -134,6 +134,72 @@ Ex_2:
 
 
 
+MySQL Queries:
+--------------
+1. create the schema (database)
+
+mysql> create schema demo;
+Query OK, 1 row affected (0.00 sec)
+
+
+2. switch to schema
+mysql> use demo;
+Database changed
+
+3. create table
+mysql> create table products(p_id integer,
+                             p_name varchar(20),
+                             p_cost integer);
+
+Query OK, 0 rows affected (0.16 sec)
+
+
+4. insert the data.
+mysql> insert into products values(111,'p_one',10000);
+Query OK, 1 row affected (0.08 sec)
+
+
+5. fetch the data from table.
+>select * from products;
+
+
+
+server.js
+---------
+var mysql = require("mysql");
+var express = require("express");
+app.use(express.static(__dirname+"/../Node_MySQLData"));
+
+
+//connection object
+var connection = mysql.createConnection({
+    host:"localhost",
+    user : "root",
+    password:"root",
+    database : "demo"
+});
+//connect to database.
+connection.connect();
+//create the rest api.
+app.get("/products",function(req,res){
+    connection.query("select * from products",function(err,
+                                                       recordsArray,
+                                                       fields){
+        res.send(recordsArray);
+    });
+
+});
+//assign the port no.
+app.listen(8080);
+
+Example_3:
+    interacting with the static files
+
+
+
+
+
+
 
 
 
