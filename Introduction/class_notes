@@ -602,6 +602,119 @@ key features of angularjs
             Ex.
                 my_service.
 
+5. filters
+    - filters are used to format the data accroding
+      to application requirement.
+
+    - we have two types of filters
+
+        1. predefined filters
+            - the filters given by the angular framework called as
+              predefined filters.
+
+            Ex.
+                uppercase
+                lowercase
+                currency
+                orderBy
+                    --
+                    --
+
+        2. custom filters
+            - the filters developed by developer based on application
+              requirement called as custom filter.
+
+        Ex.
+            my_filter
+            reverse
+            my_currency
+                --
+                --
+                --
+
+
+Comparision of AngularJS - Angular2
+-----------------------------------
+
+- the vendor for the angularjs framework is google.
+  the vendor for the angular2&4 is the google with microsoft.
+
+
+
+- by using angularjs, we can create the web applications.
+  by using angular2 & angular4 we can develop web applications as well as
+  mobile applications.
+
+  [Note : with the help of ionic framework only we can create
+          the mobile applications]
+
+  "angular2 (or) angular4 + ionic ==> mobile applications"
+
+
+- we can develop the angular applications by using javascript(1.X)
+  we can develop the angular2/angular4 applications by using typescript
+
+  [Note : typescript is the superset of javascript]
+
+
+- angularjs have a poor performance compared to angular2/angular4.
+  angular2 have a 5X more performance compared to angularjs.
+
+
+- we can directly render the angularjs applications on browser because
+  angularjs internally uses javascript.
+
+  we must convert the typescript to javascript before rendering on browser
+  in angular2/angular4 application
+  converting the typescript to javascript called as transpilation.
+  we can perform the transpilation with the help of "tsc" compiler
+
+
+- javascript is the interpreted based language.
+  typescript is the compiler based language.
+
+
+
+differences between angular2 to the angular4:
+---------------------------------------------
+
+    - angular2 have the less secuirity compared to angular4
+      in angular4 data will be encrypted so we can achieve the
+      more secuirity.
+
+    - angular4 have more performance compared to angular2.
+
+    - angular4 modifies the directives to achieve the more performance
+
+    - angular4 easy compared to angular2.
+
+
+differences between angularjs to nodejs
+---------------------------------------
+    - angularjs is the front-end technology.
+      nodejs is the server side technology.
+
+    - internally angularjs uses to javascript to develop web applications
+      internally nodejs uses javascript to develop server applications.
+
+
+    - node applications can provide the services to (db data) to
+      angular1.x , angular2.x , angular4.x and reactjs....
+
+
+differences between angularjs to reactjs
+----------------------------------------
+
+- angularjs is the client side javascript mvc framework.
+  reactjs is the client side javascript library.
+
+- angular have the poor performance while working with the
+  data structures
+
+  react have the good performance while working with the data structures.
+
+
+
 
 
 
