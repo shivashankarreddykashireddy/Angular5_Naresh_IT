@@ -1,7 +1,0 @@
-{
-  "name":"veeru",
-  "dependencies":{
-    "angular":"latest",
-    "ngstorage": "latest"
-  }
-}
