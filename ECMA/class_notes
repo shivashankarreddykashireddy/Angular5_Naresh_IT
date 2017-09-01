@@ -1,0 +1,28 @@
+TypeScript:
+-----------
+
+    - TypeScript is the programming language
+    - Superset of Javascript called as TypeScript(ECMA)
+    - TypeScript used to build either Angular2/Angular4 Applications
+    - We can compile TypeScript files by using TSC compiler
+    - Whenever we compile TypeScript, it will give equivalent javascript
+
+
+JS:
+---
+
+var i = 100;
+console.log(i);  //100
+
+
+if(true){
+    var i = 200;
+    console.log(i);  //200
+}
+
+console.log(i);   //100
+
+
+
+
+
