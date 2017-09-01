@@ -196,16 +196,77 @@ Example_3:
     interacting with the static files
 
 
+Example_4:
+    interacting with mongodb.
+
+
+- MongoDB Supports JSON.
+
+- As a MongoDB Developer, we can perform the CRUD Operations on JSON.
+
+- MongoDB is ligth weigth database compared to other databases.
+
+- MongoDB Follows the Client Server Architecture.
+
+Installation Of MongoDB:
+------------------------
+
+website : https://www.mongodb.com/
+file name : mongodb-win32-x86_64-2008plus-ssl-3.4.7-signed.msi
+
+create the directory structure:
+-------------------------------
+C:/data/db
+
+set the path environmental variable:
+------------------------------------
+path = "C:\Program Files\MongoDB\Server\3.4\bin"
+
+
+MongoDB Queries:
+----------------
+1. start the server
+>mongod
+
+2. connect to server
+>mongo
+
+3. show the available databases
+>show dbs;
+
+4.create and switch the database.
+>use demo;
+
+5.create the collection.
+>db.createCollection("products");
+
+6. insert the JSON Objects to Collection.
+>db.products.insert({"p_id":111,"p_name":"p_one","p_cost":10000});
+
+7.Query the Collection.
+>db.products.find();
+
+8.drop the database.
+>db.dropDataBase();
 
 
 
+server.js
+---------
 
+var express = require("express");
+var mongodb = require("mongodb");
+var app = express();
+app.use(express.static(__dirname+"/../Node_MongoDB"));
 
+//create the mongo client
+var nareshIT = mongodb.MongoClient;
 
-
-
-
-
-
-
-
+app.get("/products",function(req,res){
+   nareshIT.connect("mongodb://localhost:27017/demo",function(err,db){
+        db.collection("products").find().toArray(function(err,array){
+            res.send(array);
+        });
+   });
+});
+app.listen(8080);
