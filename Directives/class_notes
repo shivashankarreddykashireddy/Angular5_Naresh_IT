@@ -1,0 +1,89 @@
+Directives:
+
+    - Directives in angularjs, enhances the HTML Capabilities.
+
+    - We have two types of directives.
+
+        1.predefined directives
+
+        2.custom directives
+
+1.predefined directives
+------------------------
+
+    - The Directives given by the framework called as Predefined Directives.
+
+
+1)ng-app
+--------
+    - this directive called as root directive.
+
+    - angular framework starts the execution from ng-app directive.
+
+    - "ng-app" directive takes the logical name of web application.
+
+    - logical name of web application optional for
+      static angular applications
+
+    Ex.
+        ng-app
+
+    - logical name of web application mandatory for "dynamic angular applications"
+
+      Ex.
+        ng-app="app"
+
+    - executing the angular application forcefully without "ng-app"
+      directive called as "manual bootstrap".
+
+
+
+2) ng-controller
+    - this directive used to declare the controllers.
+
+    - we can have more than one controller per web application.
+
+    - in genaral we will declare controllers in view.
+
+        Ex.
+
+            <div ng-controller="ctrl_one">
+                //Logic Goes Here
+            </div>
+
+    - in general we will implement the controllers in javascript.
+
+        Ex.
+            app.controller("ctrl_one",ctrl_one);
+            function ctrl_one($scope){
+                //Logic Goes Here
+            }
+
+
+3. ng-repeat
+
+    - this directive used to iterate the list of elements from an array.
+
+Syntax.
+    ng-repeat = "variable in array" ng-bind="variable"
+
+
+Predefined Objects with ng-repeat:
+----------------------------------
+1.$index
+    - it will return the indexes of an elements from an array.
+
+2.$first
+    - it will return first index of an array as true.
+
+3.$last
+    - it will return last index of an array as true.
+
+** 4.$middle
+    - it will return all the middle indexes of an array as true.
+
+5.$even
+    - it will return even indexes of an array as true.
+
+6.$odd
+    - it will return odd indexes of an array as true.
