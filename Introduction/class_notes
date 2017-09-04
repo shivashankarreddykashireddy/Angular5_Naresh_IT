@@ -1,0 +1,82 @@
+1. Git Repository
+
+2. JavaScript
+    ECMA-6 Standards
+
+3. Automation Tools
+    bower
+    Gulp
+    karma
+
+4. What is AngularJS
+
+5. Advantages Of AngularJS
+
+6. Disadvantages Of AngularJS
+
+7. key features of AngularJS
+
+8. Comparison Of AngularJS - Angular2
+                 Angular2  - Angular4
+                 AngularJS - reactJS
+                 AngularJS - NodeJS
+
+
+Git Repository:
+---------------
+    - Repositories are used to collabrate the workflow in applications.
+
+    - Examples:
+            GitHub
+            SVN
+            CVS
+            ClearCase
+                --
+                --
+                --
+
+    - GitHub is the Open Source Repository and Maintained by google.
+
+GitHub Operations:
+------------------
+1. Installation Of Git.
+
+2. Create the Repository Locally.
+
+3. Add the User Credentials to the Repository.
+
+4. Add the Files to the Repository.
+
+5. Commit the Files to the Repository.
+
+6. Create the Branch
+
+7. Merge the Branches
+
+8. Integration Of Cloud Repository to IDE'S
+
+    WebStrom
+
+    Ecilipse
+
+    Visual Studio
+
+9. Push the Code to the Cloud Repository
+
+10. Pull the Code from the Cloud Repository.
+
+
+1. Installation Of Git.
+-----------------------
+    - Git is the user interface tool used to interact with the GitHub.
+
+Website : https://git-scm.com/download/win
+
+file name : Git-2.14.1-64-bit.exe
+
+2. Create the Repository Locally.
+---------------------------------
+
+
+
+
