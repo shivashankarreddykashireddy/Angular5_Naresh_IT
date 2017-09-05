@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+
+    <!--<h1>{{var_one | uppercase | lowercase}}</h1>
+    <h1>{{var_two | lowercase}}</h1>
+    <h1>{{var_three | currency}}</h1>
+    <h1>{{var_three | currency:"$":3}}</h1>
+
+    <h1>{{var_four | date:"dd-MM-yy"}}</h1> &lt;!&ndash;05-09-17&ndash;&gt;
+    <h1>{{var_four | date:"MM-dd-yyyy"}}</h1> &lt;!&ndash;09-05-2017&ndash;&gt;
+    <h1>{{var_four | date:"short"}}</h1>  &lt;!&ndash;9/5/17 8:25 PM&ndash;&gt;
+    <h1>{{var_four | date:"medium"}}</h1>  &lt;!&ndash;Sep 5, 2017 8:26:08 PM&ndash;&gt;
+    <h1>{{var_four | date:"fullDate"}}</h1> &lt;!&ndash; Tuesday, September 5, 2017&ndash;&gt;
+    <h1>{{var_four | date:"shortTime"}}</h1> 8:28 PM
+    -->
+
+
+    <input type="text" ng-model="search"> <br><br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>cost</th>
+        </tr>
+
+        <tr ng-repeat="x in array | orderBy:'p_id' | limitTo:3 | filter:search">
+            <td>{{x.p_id}}</td>
+            <td>{{x.p_name}}</td>
+            <td>{{x.p_cost}}</td>
+        </tr>
+    </table>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.var_one = "hello";
+            $scope.var_two="HELLO";
+            $scope.var_three=100;
+            $scope.var_four = new Date();
+
+            $scope.array = [
+                {'p_id':1,'p_name':'p_one','p_cost':10000},
+                {'p_id':5,'p_name':'p_five','p_cost':50000},
+                {'p_id':2,'p_name':'p_two','p_cost':20000},
+                {'p_id':4,'p_name':'p_four','p_cost':40000},
+                {'p_id':3,'p_name':'p_three','p_cost':30000}
+            ];
+        }
+
+    </script>
+</html>
