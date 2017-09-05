@@ -1,0 +1,58 @@
+<!--
+<script type="text/javascript">
+    function class_one() {
+        this.var_one = "Welcome to javascript classes !";
+    }
+
+    var obj = new class_one();
+    document.write(obj.var_one+"<br>");
+    document.write(obj.var_one);
+</script>-->
+
+<!--<script type="text/javascript">
+    function class_one(){
+        this.sub_one = "Angular4";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+    }
+
+    var obj = new class_one();
+
+    document.write(obj.sub_one+"<==>"+obj.sub_two+"<==>"+obj.sub_three+"<br>");
+    document.write(obj.sub_one+"<==>"+obj.sub_two+"<==>"+obj.sub_three);
+
+</script>-->
+
+
+<!--<script type="text/javascript">
+    function class_one(arg1,arg2,arg3) {
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three=arg3;
+    }
+    var obj = new class_one("AngularJS","NodeJS","MongoDB");
+    document.write(obj.var_one+"<==>"+obj.var_two+"<==>"+obj.var_three);
+</script>-->
+
+
+<script type="text/javascript">
+    function class_one(arg1,arg2,arg3) {
+        //local variable
+        var num_one = arg1+10;
+        //class variable
+        this.var_one=num_one;
+
+        var num_two=arg2+10;
+        this.var_two=num_two;
+
+        var num_three=arg3+10;
+        this.var_three = num_three;
+
+    }
+    var obj = new class_one(10,20,30);
+    document.write(obj.var_one+obj.var_two+obj.var_three);
+    //document.write(obj.num_one);
+</script>
+
+
+
