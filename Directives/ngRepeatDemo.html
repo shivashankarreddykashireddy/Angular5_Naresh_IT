@@ -14,11 +14,12 @@
 <!DOCTYPE html>
 <html ng-app="app" ng-controller="ctrl">
 
-    <h1 ng-repeat="x in array_one">
+
+<h1 ng-repeat="x in array_one">
         {{x}}
     </h1>
 
-    <table border="1">
+    <table class="table table-responsive">
         <tr>
             <th>id</th>
             <th>name</th>
@@ -28,9 +29,11 @@
         <tr ng-repeat="x in array_two">
             <td>{{x.p_id}}</td>
             <td>{{x.p_name}}</td>
+            <td>{{x.p_cost}}</td>
         </tr>
     </table>
 
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="bower_components/angular/angular.min.js"></script>
 
     <script>
