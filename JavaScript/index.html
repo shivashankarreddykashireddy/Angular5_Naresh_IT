@@ -119,7 +119,24 @@ anonymous functions:
     fun_one()();
 </script>-->
 
-<script type="text/javascript">
+
+<!--
+    JSON Stands for Java Script Object Notation.
+    JSON Meant for Transferring the Data Over the Network.
+    JSON is Ligth Weigth Compared to XML.
+
+    Syntax.
+
+    Objects - { }
+
+    Arrays  - [ ]
+
+    data - "key&value"
+
+-->
+
+
+<!--<script type="text/javascript">
     var data = {
         "fun_one":fun_one,
         "fun_two":fun_two,
@@ -139,6 +156,97 @@ anonymous functions:
     };
 
     console.log(data.fun_one()+"<==>"+data.fun_two()+"<==>"+data.fun_three());
+</script>-->
+
+
+<!--<script type="text/javascript">
+
+    var data = {
+                    "records":[
+                        {"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"},
+                        {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"},
+                        {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"},
+                        {"Name":"Around the Horn","City":"London","Country":"UK"},
+                        {"Name":"B's Beverages","City":"London","Country":"UK"},
+                        {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"},
+                        {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"},
+                        {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"},
+                        {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"},
+                        {"Name":"Bon app'","City":"Marseille","Country":"France"},
+                        {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"},
+                        {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"},
+                        {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"},
+                        {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"},
+                        {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"}
+                    ]
+    };
+
+    console.log(data.records.length);
+    var result="";
+    for(var i=0;i<data.records.length;i++){
+        var my_obj = data.records[i];
+        var __name=  my_obj.Name;
+        var __city=  my_obj.City;
+        var __country = my_obj.Country;
+
+        result=result+__name+"..."+__city+"..."+__country+"<br>";
+    }
+
+    document.write(result);
+
+</script>-->
+
+
+<!--
+class:
+    collection of variables and functions called as class.
+
+    we can create the classes by using "function" keyword.
+
+    in function if all members(variables&functions) starts with "this" keyword.
+
+    we can create the object for class by using "new" keyword.
+
+-->
+<!--
+<script type="text/javascript">
+    function class_one(){
+        this.var_one = "AngularJS";
+        this.var_two = "NodeJS";
+        this.var_three = "MongoDB";
+
+
+        this.my_fun = function () {
+            return this.var_one+"<==>"+this.var_two+"<==>"+this.var_three
+        };
+    }
+
+    var obj = new class_one();
+    document.write(obj.my_fun());
+
+</script>-->
+
+
+<script type="text/javascript">
+    function class_one() {
+        this.fun_one = function () {
+            return new class_two();
+        };
+    };
+
+    function class_two() {
+        this.fun_one = function () {
+            return "Welcome to Classes !";
+        };
+    };
+
+    //console.log(new class_one().fun_one().fun_one());
+
+    var obj_one = new class_one();
+    var obj_two = obj_one.fun_one();
+    console.log(obj_two.fun_one());
+
+
 </script>
 
 
