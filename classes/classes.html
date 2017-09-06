@@ -35,6 +35,7 @@
 </script>-->
 
 
+<!--
 <script type="text/javascript">
     function class_one(arg1,arg2,arg3) {
         //local variable
@@ -53,6 +54,114 @@
     document.write(obj.var_one+obj.var_two+obj.var_three);
     //document.write(obj.num_one);
 </script>
+-->
 
+
+<!--
+1.Create the class(class_one)
+2.Create the function in class(getData)
+-->
+
+<!--<script type="text/javascript">
+
+    function class_one(){
+        this.getData = function () {
+            return "Data From Promises Soon...!";
+        };
+    };
+    var obj = new class_one();
+    console.log(obj.getData());
+</script>-->
+
+
+<!--
+    1. Create two classes(class_one and class_two)
+    2.class_one must contain function(func_one)
+    3.class_two must contain function(func_two)
+    4.func_one should return the class_two object
+-->
+
+ <!--<script type="text/javascript">
+
+     function class_one(){
+         this.func_one=function () {
+            return new class_two();
+         }
+     }
+
+
+
+     function class_two(){
+         this.func_two=function () {
+            return "Welcome to class two !";
+         }
+     }
+
+     var obj = new class_one();
+     var obj_two = obj.func_one();
+     console.log(obj_two.func_two());
+
+
+ </script>-->
+
+
+
+<!--
+    1.Create 3 classes class_one,class_two and class_three
+    2.Pass the class class_two and class_three references to class_one constructor
+-->
+
+<!--<script type="text/javascript">
+
+   function class_one(arg1,arg2){
+
+       this.var_one = arg1.getData().Prop1+"...."+arg1.getData().Prop2+"..."+arg1.getData().Prop3
+                      +"..."+arg2.getData().Hello+"..."+arg2.getData().Hello2+"..."+arg2.getData().Hello3;
+   }
+
+   function class_two(){
+      this.getData=function () {
+          return {
+          "Prop1":"value1",
+          "Prop2":"value2",
+          "Prop3":"value3"
+          }
+      }
+   }
+   function class_three(){
+       this.getData=function () {
+           return {
+               "Hello":"Hai",
+               "Hello2":"Hai2",
+               "Hello3":"Hai3"
+           }
+
+       }
+   }
+   var obj=new class_one(new class_two(),new class_three());
+
+   document.write(obj.var_one);
+</script>-->
+
+
+
+<script type="text/javascript">
+
+    function class_one(){
+        this.fun_one= function (arg1,arg2) {
+            return new class_two(arg1,arg2).result();
+        };
+    }
+
+    function class_two(num_one,num_two) {
+        this.result = function () {
+            return num_one+num_two;
+        };
+    }
+    var obj = new class_one();
+    console.log(obj.fun_one(10,20));
+
+
+</script>
 
 
