@@ -37,3 +37,38 @@ predefined filters
 
 7. filter
     - this filter used to search the array based on user input.
+
+custom filter:
+--------------
+    - creating our own filter based on application requirement
+      called as custom filter.
+
+Ex.
+    {{"hello" | reverse}}
+    app.filter("reverse",reverse);
+    function reverse(){
+        return function(arg1){
+            var data="";
+            for(var i=0;i<arg1.length;i++){
+                data = arg[i]+data;
+            }
+            return data;
+        }
+    }
+
+
+Ex.
+    {{100 | my_currency:"&#8377;":true}}
+    {{200 | my_currency:"&euro;":false}}
+
+    app.filter("my_currency",my_currency);
+    function my_currency(){
+        return function(amount,symbol,position){
+            if(position){
+                return symbol+" "+amount;
+            }else{
+                return amount+" "+symbol;
+            }
+        }
+    }
+
