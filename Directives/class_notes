@@ -110,4 +110,80 @@ Example:
 
 
 
+5)ng-options
+    - this directive used to populate the values to the drop down.
+
+Syntax.
+    ng-options = "model_values as dropdown_values for variable in array"
+
+Ex.
+    $scope.array_one = [{'p_id':1,'p_name':'laptop'},
+                        {'p_id':2,'p_name':'tv'},
+                        {'p_id':3,'p_name':'mac book'},
+                        {'p_id':4,'p_name':'smart phone'},
+                        {'p_id':5,'p_name':'watch'}];
+
+    Use Case : 1
+        drop down - id's
+        model     - names
+
+    <select ng-model="model_one" ng-options="x.p_name as x.p_id for
+                                             x in array_one"></select>
+
+
+    Use Case : 2
+        drop down - names
+        model     - id's
+
+    <select ng-model="model_two" ng-options="x.p_id as x.p_name for
+                                             x in array_one"></select>
+
+
+
+    Use Case : 3
+        drop down - names
+        model     - names
+
+
+    Use Case : 4
+        drop down - id's
+        model     - id's
+
+
+    Ex.
+
+        $scope.array_two = ["Hello_1","Hello_2","Hello_3","Hello_4","Hello_5"];
+        drop down - Hello_1 to Hello_5
+        model     - Hello_1 to Hello_5
+        <select ng-model="model_five" ng-options="x as x for x in array_two"></select>
+
+
+
+6.ng-init
+    - ng-init directive used to initilize the members in configuration phase.
+    - ng-init initilized members available to application scope.
+    - we can declare the members in the form of a "key&value" pairs.
+
+Syntax.
+    ng-init="db_user = 'root'"
+
+where "db_user" is the key and we can access anywhere in the application.
+
+
+7. ng-dblclick:
+    - this directive will execute by angular framework when ever double click
+      event raised by user interface elements
+
+Syntax.
+    ng-dblclick="Expression"/
+                "user defined function"/
+                "user defined function with parameters"
+
+
+
+
+
+
+
+
 
