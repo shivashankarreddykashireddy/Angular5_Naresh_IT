@@ -1,0 +1,143 @@
+Step 1:
+    Create the DataBase with login details.
+
+>create schema poc;
+>use poc;
+>create table login_details(uname varchar(20),umyslpwd varchar(20));
+>insert into login_details values('admin','admin');
+>select * from login_details;
+
+---------------------
+user     : root
+password : root
+database : poc
+host     : localhost
+---------------------
+
+
+Step 2:
+    create the REST Service for login Authentication.
+
+server.js
+---------
+//import modules
+var express = require("express");
+var mysql = require("mysql");
+var jwt = require("jwt-simple");
+
+//create the node instance
+var app = express();
+
+//deploy the angular application (POC)
+app.use(express.static(__dirname+"/../POC"));
+
+
+//connection object.
+var connection = mysql.createConnection({
+    host:"localhost",
+    user : "root",
+    password:"root",
+    database : "poc"
+});
+
+//connect to database.
+connection.connect();
+
+var tokensArray = [];
+
+//post request
+app.post("/login",function(req,res){
+    var uname = req.body.uname;
+    var upwd = req.body.upwd;
+
+    connection.query("select uname from login_details
+                     where uname='"+uname+"'",
+                     function(err,recordsArray,fields){
+          if(recordsArray.length>0){
+               var token = jwt.encode({'uname':uname},
+                           'hr@tcs.com');
+               tokensArray.push(token);
+               res.send({'login':'success','token':token});
+          }else{
+            res.send({'login':'fail'});
+          }
+    });
+});
+
+
+Step 3:
+    implement the loginService.
+
+
+-----------
+services
+    loginService.js
+-----------
+
+app.service("loginService",loginService);
+function loginService($http){
+    this.authenticate = function(obj){
+        return $http.post("http://localhost:8080/login",obj)
+            .then((posRes)=>{
+                return posRes;
+            },(errRes)=>{
+                return errRes;
+            });
+    }
+}
+
+
+
+Step 4:
+    implement the Single Page Application.
+
+--------------------
+POC
+    templates
+        login.html
+        home.html
+
+    controllers
+        loginController.js
+        homeController.js
+
+    app.js
+
+    config.js
+
+    index.html
+
+    bower.json
+-----------------------
+
+
+Step 5:
+    Store the token in "local Storage"
+    and navigates to home page.
+
+loginController.js
+------------------
+app.controller("loginController",loginController);
+
+function loginController($scope,
+                         loginService,
+                         $localStorage,
+                         $location) {
+
+    $scope.obj={};
+
+    $scope.login_details = function () {
+
+        loginService.authenticate($scope.obj)
+                        .then(function (res) {
+            if(res.data.login=="success"){
+                $localStorage.poc = res;
+                $location.path("/home");
+            }else{
+                alert("Login Fail !");
+            }
+        });
+    };
+};
+
+
