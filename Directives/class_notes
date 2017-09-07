@@ -180,6 +180,99 @@ Syntax.
                 "user defined function with parameters"
 
 
+8.ng-class-odd
+    - this directive used to apply the css classes to the odd rows of table.
+
+
+9.ng-class-even
+    - this directive used to apply the css classes to the even rows of table.
+
+10.ng-include
+    - this directive used to include one template to another template.
+
+Ex.
+    $scope.array = [{"e_id":111,"e_name":"emp_one","e_sal":10000},
+                    {"e_id":222,"e_name":"emp_two","e_sal":20000},
+                    {"e_id":333,"e_name":"emp_three","e_sal":30000},
+                    {"e_id":444,"e_name":"emp_four","e_sal":40000},
+                    {"e_id":555,"e_name":"emp_five","e_sal":50000}
+                    ];
+
+    <style>
+        .odd{
+            color:red;
+         }
+         .even{
+            color:green;
+         }
+    </style>
+
+    table.html
+    ----------
+    <table border="1">
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>sal</th>
+                </tr>
+
+                <tr ng-repeat="x in array"
+                                ng-class-odd="'odd'"
+                                ng-class-even="'even'">
+                    <td>{{x.e_id}}</td>
+                    <td>{{x.e_name}}</td>
+                    <td>{{x.e_sal}}</td>
+                </tr>
+    </table>
+
+
+    ngIncludeDemo.html
+    ------------------
+    <html ng-app="app">
+        <div ng-include="'table.html'"></div>
+    </html>
+
+    **********************
+Directives
+    app.js
+    ctrl.js
+    my_style.css
+    table.html
+    ngIncludeDemo.html
+    **********************
+
+
+11.ng-if
+    - this directive used to write the conditions.
+
+Syntax.
+    ng-if="true"/ "false"
+
+
+Ex.
+    <label>Uname.</label>
+    <input type="text" ng-model="uname">
+
+    <span ng-if="uname!=null && uname!=''">
+        <label>Upwd.</label>
+        <input type="password" ng-model="upwd">
+    </span>
+
+[Note : ng-if directive can directly interact with the document object]
+[Note : based on the condition ng-if directive adds/removes the nodes from the DOM]
+
+
+12. ng-show
+
+    - this directive used to show / hide the html elements
+      based on the condition
+
+    Syntax.
+        ng-show = "true" / "false"
+
+
+
+
 
 
 
