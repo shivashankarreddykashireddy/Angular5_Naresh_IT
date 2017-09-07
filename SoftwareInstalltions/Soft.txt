@@ -1,0 +1,91 @@
+Software Installation:
+----------------------
+
+1. Download and install the Git.
+
+website   : https://git-scm.com/download/win
+file name : Git-2.14.1-64-bit.exe
+
+
+2. Download and Install the NodeJS
+
+website   : https://nodejs.org/en/download/
+file name : node-v6.11.2-x64.msi
+
+
+3. Download and Install the Webstrom IDE(Visual Studio Code).
+
+website   : https://www.jetbrains.com/webstorm/download/
+	    #section=windows 
+
+file name : WebStorm-2017.2.3.exe
+
+
+Visual Code Downloading Website:
+--------------------------------
+https://code.visualstudio.com/download
+file name : VSCodeSetup-x64-1.15.1.exe
+
+
+4. Install the Gulp Plugin
+> npm install -g gulp
+
+5. Install the bower plugin
+>npm install -g bower   (Yarn)
+
+
+6. Install the tsc(TypeScript Compiler)
+>npm install -g tsc
+
+7.Create the account with GitHub.
+website : https://github.com/join/
+
+8.Checkout the code from GitHub
+URL : https://github.com/ajsnaresh/AJS_Classes.git
+
+
+ - Open the Webstrom IDE
+  
+ - Select the VCS from Menu Bar
+
+ - Select Checkout from Version Control
+
+ - Select GitHub
+
+ - click the "create API Token"
+
+ - enter the login details (GitHub Details)
+
+ - click the login
+
+ - enter the repository details
+
+	Git Repository URL :  https://github.com/ajsnaresh/AJS_Classes.git
+	
+	Parent Directory   :  D:\
+
+	Directory Name     :  Angular4Applications
+
+ - clone
+
+ - yes
+
+ - switch to angular2 branch from master branch
+
+
+pull the code from repository:
+------------------------------
+- VCS
+- Git
+- Pull
+- select origin/angular2
+- pull
+
+
+
+
+
+
+
+
+
