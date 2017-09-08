@@ -1,0 +1,32 @@
+Bower:
+
+    - bower is the automation tool , used to download the required dependencies to develop
+      web application.
+
+    - bower is the automation tool based on NodeJS Platform.
+
+Install the bower:
+------------------
+>npm install -g bower
+
+
+bower.json
+----------
+{
+    "name":"durgasoft",
+    "dependencies":{
+        "bootstrap":"latest",
+        "angular":"latest"
+    }
+}
+
+>npm install
+
+
+[Note : automatically dependencies will be downloads to "bower_components" folder]
+
+
+
+
+
+

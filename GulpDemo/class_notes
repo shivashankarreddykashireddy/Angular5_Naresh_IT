@@ -1,0 +1,42 @@
+Gulp:
+    - Gulp is the Automation tool used to prepare the Production Builds.
+
+    - Gulp based on NodeJS
+
+Installation Of Gulp:
+---------------------
+
+>npm install -g gulp
+
+
+Modules in Gulp:
+----------------
+
+1. gulp-concat
+
+    - this module used to concat the files.
+
+2. gulp-uglify
+
+    - this module used to compress the javascript files
+
+3.gulp minify-html
+
+    - this module used to compress the html files.
+
+
+4. gulp-minify-css
+
+    - this module used to compress the css files.
+
+5. gulp-bower
+
+    - used to execute the bower.
+
+6. gulp-open
+
+    - used to launch the browsers.
+
+
+
+
