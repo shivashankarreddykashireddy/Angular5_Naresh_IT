@@ -272,6 +272,118 @@ Ex.
 
 
 
+13. ng-switch
+
+Syntax.
+
+<div ng-switch="expression">
+
+    <div ng-switch-when="value_one">
+        //Code
+    </div>
+
+    <div ng-switch-when="value_two">
+        //Code
+    </div>
+
+        ---
+        ---
+        ---
+    <div ng-switch-default>
+        //Code
+    </div>
+</div>
+
+
+
+
+14.ng-submit:
+    - this directive used to submit the form to the controller at a time.
+
+Syntax.
+
+<form ng-submit="login_details()">
+
+    //Form Elements
+
+    <input type="submit"></input>
+</form>
+
+
+[Note : when ever we click the submit button, automatically login_details() will
+        execute in controller]
+
+
+15. ng-hide
+    - it is used to show / hide the html elements based on condition.
+
+Syntax.
+    ng-hide = "true" / "false"
+
+
+16. ng-mousedown/
+    ng-mouseup
+
+    ng-mouseenter/
+    ng-mouseleave       ="Expression" / "user defined function" / "user defined function with parameters"
+
+    ng-mouseover/
+    ng-mouseout
+
+    ng-mousemove
+
+
+
+17. ng-cloak:
+    - this directive used to avoid the flickering of web page
+      when ever we refresh with expressions
+
+
+Ex.
+    <div ng-controller="ctrl" ng-cloak>
+        {{var_one}}
+    </div>
+
+[Note : eventhoe if we refresh web page , div won't be flickered because of
+        ng-cloak directive]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
