@@ -3,6 +3,8 @@ var mysql   = require("mysql");
 var jwt     = require("jwt-simple");
 var mongodb = require("mongodb");
 var bodyparser = require("body-parser");
+var fs = require("fs");
+
 
 var app = express();
 
@@ -34,6 +36,50 @@ app.post("/login",function (req,res) {
             res.send({'login':'fail'});
         }
     });
+});
+
+
+app.post("/static",function (req,res) {
+    if(tokensArray[0]==req.body.token){
+        fs.readFile(__dirname+"/products.json",function (err,data) {
+            res.send(data);
+        });
+    }else{
+        res.send({'404':'UnAutorized User !'});
+    }
+
+});
+
+
+app.post("/mysql",function (req,res) {
+    if(tokensArray[0]==req.body.token){
+
+        connection.query("select * from products",function (err,recordsArray,fields) {
+            res.send(recordsArray);
+        });
+
+    }else{
+        res.send({'404':'UnAutorized User !'});
+    }
+
+});
+
+
+var mongoClient = mongodb.MongoClient;
+
+app.post("/mongodb",function (req,res) {
+    if(tokensArray[0]==req.body.token){
+
+        mongoClient.connect("mongodb://localhost:27017/poc",function (err,db) {
+            db.collection("products").find().toArray(function (mongoError,array) {
+                res.send(array);
+            });
+        });
+
+    }else{
+        res.send({'404':'UnAutorized User !'});
+    }
+
 });
 
 

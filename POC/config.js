@@ -10,5 +10,21 @@ function config($stateProvider,$urlRouterProvider) {
             url:"/home",
             templateUrl:"templates/home.html",
             controller:"homeController"
+        })
+        .state("home.about",{
+            url:"/about",
+            templateUrl:"templates/about.html",
+            controller:"aboutController"
+        })
+
+        .state("home.contact",{
+            url:"/contact",
+            templateUrl:"templates/contact.html",
+            controller:"contactController"
+        })
+        .state("home.portfolio",{
+            url:"/portfolio",
+            templateUrl:"templates/portfolio.html",
+            controller:"portfolioController"
         });
 }
