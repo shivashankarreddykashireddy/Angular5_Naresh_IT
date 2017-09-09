@@ -321,13 +321,33 @@ function config(my_serviceProvider){
 }
 
 Predefined Services:
--------------------
+--------------------
+    - the services given by the angular framework called as predefined services.
 
+1. $http
+    - this predefined service used to connect with the servers by using
+      http protocol.
 
+app.service("my_service",my_service);
+function my_service($http){
+    this.fun_one = function(){
+        return $http.get("https://www.w3schools.com/angular/customers.php")
+                    .then(function(posRes){
+                        return posRes;
+                    },
+                    function(errRes){
+                    return errRes;
+        });
+    };
+};
 
-
-
-
+app.controller("ctrl",ctrl);
+function ctrl($scope,my_service){
+    my_service.fun_one().then(function(res){
+            $scope.result = res;
+    });
+}
+<h1>{{result}}</h1>
 
 
 
