@@ -197,6 +197,153 @@ ng-repeat directive:
     - this directive used to iterate the list of elements from an array.
 
 
+Services:
+---------
+    - Services can provide the common business logic to multiple controllers.
+
+    - We have two types of services.
+
+        1. custom services
+
+        2. predefined services
+
+1. custom services
+------------------
+    - creating our own service based on application requirement called as
+      Custom Service.
+
+    - In AngularJS, we can create the Custom Services in 5 ways.
+
+    1. factory()
+    2. service()
+    3. value()
+    4. constant()
+    5. provider()
+
+
+creating the custom service by using factory()
+-----------------------------------------------
+
+    - factory() is global function in angularjs used to create the custom services.
+
+
+app.factory("my_service",my_service);
+function my_service(){
+    //return "Welcome to Custom Services !";
+    return new class_one().my_fun();
+}
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+    $scope.var_one = my_service;
+}
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+    $scope.var_two = my_service;
+}
+function class_one(){
+    this.my_fun = function(){
+        return "Welcome to JavaScript Classes !";
+    }
+}
+
+
+creating the custom service by using service()
+----------------------------------------------
+app.service("my_service",my_service);
+function my_service(){
+    this.fun_one = function(){
+        return "i am from fun_one";
+    }
+    this.fun_two = function(){
+        return "i am from fun_two";
+    }
+}
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+    $scope.var_one = my_service.fun_one();
+}
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+    $scope.var_two = my_service.fun_two();
+}
+
+
+creating the custom services by using value()
+---------------------------------------------
+    - we can create the custom service in the form of a key&value pairs.
+
+ Ex.
+    app.value("my_service","First Value");
+    app.value("my_service","Second Value");
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service;
+    }
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+        $scope.var_two = my_service;
+    }
+
+
+creating the custom services by using constant()
+---------------------------------------------
+    - we can create the custom service in the form of a key&value pairs.
+
+ Ex.
+    app.constant("my_service","First Value");
+    app.constant("my_service","Second Value");
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service;
+    }
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+        $scope.var_two = my_service;
+    }
+
+
+Creating the Custom Service by using provider()
+-----------------------------------------------
+
+app.provider("my_service",my_service);
+function my_service(){
+    this.db_user="root_one";
+    this.$get = function(){
+        return this.db_user;
+    }
+}
+
+app.config(config);
+function config(my_serviceProvider){
+    my_serviceProvider.db_user = "root_two";
+}
+
+Predefined Services:
+-------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
