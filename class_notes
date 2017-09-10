@@ -633,6 +633,109 @@ $stateProvider.state("page_one",{
     controller:"child_two"
 });
 
+NodeJS
+------
+    - NodeJS is the Server Side Scripting Language.
+
+    - By using NodeJS we can create both http & tcp servers.
+
+    - NodeJS Supports the Modules (Predefined & Custom Modules)
+
+Modules in NodeJS
+-----------------
+
+1. express
+    - by using this module we can develop the web services.
+
+2. mysql
+    - by using this module we can interact with the mysql database.
+
+3. mongodb
+    - by using this module we can interact with the mongodb.
+
+4. fs
+    - by using this module we can interact with the flat files
+    Ex.
+        static text files
+        static xml files
+        static json files
+
+5. body-parser
+    - by using this module we can set the MIME Type.
+
+[Note : we can download required modules by using
+        package.json file]
+
+
+[Note : we can run the package.json file by using "npm install"
+        command]
+
+
+[Note : when ever we run the "npm install" automatically
+        modules will be downloaded to "node_modules" folder]
+
+
+MySQL
+-----
+---------------------
+
+host : localhost
+
+password(mysql) : root
+
+database : demo
+
+table : products
+
+--------------------
+
+MongoDB:
+--------
+    - As a MongoDB Developer we can store JSON Objects directly
+      into database.
+
+    - MongoDB Follows the Client Server Architecture.
+
+
+MongoDB Queries:
+----------------
+1. start the server
+> mongod
+
+2. connect to server
+> mongo
+
+3. create and switch to database.
+> use demo;
+
+4. create collection
+> db.createCollection("products");
+
+5. insert the objects to products collection.
+> db.products.insert({"p_id":111,"p_name":"p_one","p_cost":10000});
+
+6. query the collection
+>db.products.find();
+
+-----------------------
+address : mongodb://localhost:27017/
+
+database : demo
+
+collection : products
+-------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
