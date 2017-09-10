@@ -726,6 +726,56 @@ collection : products
 -------------------------
 
 
+Custom Directive:
+-----------------
+ - Creating our own directive based on application requirement
+   called as Custom Directive.
+
+
+Syntax.
+    app.directive("header",header);
+    function header(){
+        return {
+            restrict: "E" / "A" / "M" / "C"
+                            <header></header>
+                            <div header></div>
+                            <div class="header"></div>
+                            <!-- header -->
+
+            template : "<h1>Hello</h1>"
+
+            templateUrl:"templates/page_one.html"
+
+            controller: "page_one"
+
+            scope :  {
+
+            }
+                ---
+                ---
+                ---
+        }
+    }
+
+
+
+-------------------------------
+CustomDirectiveExample
+        bower.json
+        templates
+              header.html
+        controllers
+              header.js
+        directives
+              header.js
+        app.js
+        index.html
+--------------------------------
+
+
+
+
+
 
 
 
