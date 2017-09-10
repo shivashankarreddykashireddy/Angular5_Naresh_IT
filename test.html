@@ -8,7 +8,7 @@
 
     my_fun()*/
 
-    function fun_one(arg1) {
+    /*function fun_one(arg1) {
         return arg1;
     }
 
@@ -17,9 +17,14 @@
     }
 
     var def = fun_one(fun_two);
-    def();
+    def();*/
 
+    var phone = {
+      "link":function () {
+            return this===phone
+      }
+    };
 
-
+    console.log(phone.link());
 
 </script>
