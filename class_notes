@@ -350,55 +350,154 @@ function ctrl($scope,my_service){
 <h1>{{result}}</h1>
 
 
+Single Page Applications:
+-------------------------
+
+    - loading the target template to source template without refreshing the whole
+      web page called as single page application.
+
+    - loading the target template to source template in single page applications
+      called as "routing".
+
+    - we can implement the routing in single page applications by using
+      following modules.
+
+        1. ngRoute
+
+        2. ui.router
+
+
+Steps to create the Single Page Application by using ngRoute Module:
+--------------------------------------------------------------------
+
+Step 1:
+    download ngRoute Module.
+
+[Note : "angular-route.min.js" file representing the ngRoute Dependency file]
+
+Step 2:
+    Add the ngRoute Dependency
+
+app.js
+------
+var app = angular.module("app",["ngRoute"]);
+
+
+Step 3:
+    create the target templates
+
+------------
+templates
+    page_one.html
+    page_two.html
+------------
+
+Step 4:
+    create the controllers
+
+----------------
+controllers
+    page_one.js
+    page_two.js
+----------------
+
+
+Step 5:
+    Implement the Mapping in single page application
+
+Rules:
+
+1. mapping should be complete in booting of angular application.
+
+Ex.
+    app.config(config);
+    function config($routeProvider){
+        //Mapping
+    }
+
+    [Note : $routeProvider is the Predefined object used to implement the
+            routing in single page application by using ngRoute Module]
 
 
 
+2. mapping should be in the form of a "key&value" pairs
+
+    - keys are user defined keys
+
+    Ex.
+        1. /page_one
+        2. /page_two
 
 
+    - values are json objects with following json keys
+
+        1. templateUrl
+        2. controller
 
 
+config.js
+---------
+app.config(config);
+function config($routeProvider){
+
+    $routeProvider.when("/page_one" , {templateUrl:"templates/page_one.html",
+                                        controller:"page_one"})
+                  .when("/page_two" , {templateUrl:"templates/page_two.html",
+                                        controller:"page_two"})
+                  .otherwise("/page_one" , {templateUrl:"templates/page_one.html"
+                                            ,controller:"page_one"});
+
+}
+
+Step 6:
+    create the source template
+
+Ex.
+
+index.html
+----------
+
+<html ng-app="app">
+    <a href="#page_one">Page_One</a>
+    <a href="#page_two">Page_One</a>
+    <div ng-view></div>
+</html>
 
 
+Passing the URL Parameters by using "ngRoute Module"
+----------------------------------------------------
+
+index.html
+----------
+<a href="#page_one/111/emp_one/50000">Page_One</a>
+
+config.js
+---------
+$routeProvider.when("/page_one/:param1/:param2/:param3" ,{
+    templateUrl:"templates/page_one.html",
+    controller : "page_one"
+});
 
 
+page_one.js
+-----------
+app.controller("page_one",page_one);
+function page_one($scope, $routeParams){
+    console.log($routeParams.param1);  //111
+    console.log($routeParams.param2);  //emp_one
+    console.log($routeParams.param3);  //50000
+}
 
 
+Steps to Single Page Applications by using ui.router module:
+------------------------------------------------------------
+    - ui.router module is the 3rd party module.
 
+    - by using "ui.router" module we can implement the Nested Routing
 
+    - by using "ui.router" module we can implement the Named Views.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    - by using "ui.router" module we can pass JSON objects as the URL Parameters.
 
 
 
