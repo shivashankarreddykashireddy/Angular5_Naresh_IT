@@ -772,23 +772,41 @@ CustomDirectiveExample
         index.html
 --------------------------------
 
+Test Cases:
+-----------
+
+    - Karma is Test Runner using "Jasmine" as the
+      framework to write the unit test cases for
+      ui applications like angularjs, angular4, reactjs,...
 
 
+> npm install -g karma
+
+var app = angular.module("app",[]);
+app.controller("ctrl",ctrl);
+function ctrl($scope){
+    $scope.var_one = "hello";
+}
 
 
+{{var_one}}
 
 
+karma.conf.js
+-------------
+describe("my first unit test case",function(){
+    var $controller;
+    module("app");
+    inject("getting controllers",function(_$controller_){
+        $controller=_$controller_;
+    });
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+it("check the value",function(){
+    var ctrl = $controller.get("ctrl",{$scope:$scope});
+    expect(ctr.var_one).equals("Hello")
+        console.log("Test Case Success !");
+    console.log("Test Case Fail !");
+});
+---------------
