@@ -281,3 +281,40 @@ Step 11:
 Step 12:
     implement the logout functionality
 
+
+Step 13:
+    implementation of interceptor.
+
+- interceptors will execute before each routing in single
+  page application
+
+- "$stateChangeStart" is the interceptor used to handle
+   the invalid routings in applications.
+
+- we will implement interceptors in config file with
+  run().
+
+Ex.
+
+    app.run(run).config(config);
+    function run($localStorage,$location,$rootScope){
+        $rootScope.$on("$stateChangeStart",function(e,
+                                                    fromState,
+                                                    toState,
+                                                    fromParams,
+                                                    toParams){
+            if(!$localStorage.poc){
+                $location.path("/login");
+            }
+        });
+    };
+
+
+
+
+
+
+
+
+
+
