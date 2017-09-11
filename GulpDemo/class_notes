@@ -20,7 +20,7 @@ Modules in Gulp:
 
     - this module used to compress the javascript files
 
-3.gulp minify-html
+3.gulp-minify-html
 
     - this module used to compress the html files.
 
@@ -36,6 +36,73 @@ Modules in Gulp:
 6. gulp-open
 
     - used to launch the browsers.
+
+
+- we can download the above modules by using "package.json" file.
+
+- we can execute the "package.json" file by using "npm install" command
+
+------------
+GulpDemo
+    devEnv
+        html
+            index_one.html
+            index_two.html
+        css
+            style_one.css
+            style_two.css
+
+        js
+            sample_one.js
+            sample_two.js
+
+        index.html
+
+        bower.json
+------------------------------
+
+Gulpfile.js
+-----------
+
+//import the modules
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
+var minifyHTML = require("gulp-minify-html");
+var minifyCSS = require("gulp-minify-css");
+var bower = require("gulp-bower");
+var open = require("gulp-open");
+var gulp = require("gulp");
+
+
+gulp.task("task_one" , function(){
+    gulp.src("./devEnv/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(minifyHTML())
+        .pipe(gulp.dest("./prodEnv/html"));
+});
+
+>gulp task_one
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
