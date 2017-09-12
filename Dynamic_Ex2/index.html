@@ -9,6 +9,8 @@
 
     <h1>{{outer().key1}}</h1>
 
+    <h1>{{my_obj.key1()}}</h1>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
     <script>
         var app = angular.module("app",[]);
@@ -39,6 +41,10 @@
 
             $scope.inner = function () {
               return "Welcome";
+            };
+
+            $scope.my_obj = {
+                "key1":$scope.inner
             };
 
         }
