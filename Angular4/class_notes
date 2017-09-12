@@ -1,0 +1,29 @@
+
+    - By using Angular4 we can develop web applications and
+      mobile applications.
+
+    - we can develop angular4 applications by using "TypeScript".
+
+
+Steps to Create the Angular4 Applications:
+------------------------------------------
+
+> npm install -g @angular/cli
+
+> ng new demoapp
+
+> cd demoapp
+
+> ng serve
+
+[Note : angular4 application by default running on "lite"
+        server with the port no.4200]
+
+
+
+
+
+
+
+
+
