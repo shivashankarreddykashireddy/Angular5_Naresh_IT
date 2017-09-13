@@ -1,0 +1,70 @@
+Services:
+    - Services will provide the common business logic multiple controllers.
+
+    - we have two types of services.
+
+        1. predefined services
+
+        2. custom services
+
+custom services
+---------------
+
+- the services developed by developer based on application requirement called as
+  custom services.
+
+- in angular we can create the custom services in 5 ways.
+
+    1. service()
+
+    2. factory()
+
+    3. value()
+
+    4. constant()
+
+    5. provider()
+
+
+creating the custom service by using service()
+----------------------------------------------
+app.service("my_service",my_service);
+function my_service(){
+
+    this.fun_one = function(){
+        return "Data From MongoDB...!";
+    }
+
+    this.fun_two = function(){
+         return "Data from MySQL...!"
+    }
+}
+
+
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+    $scope.var_one = my_service.fun_one();
+}
+
+
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+    $scope.var_two=my_service.fun_two();
+}
+
+[Note : service() depending on user defined functions to provide the
+        services to controllers]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
