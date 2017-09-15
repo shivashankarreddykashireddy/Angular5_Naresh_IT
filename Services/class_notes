@@ -160,7 +160,91 @@ function ctrl($scope,my_service){
     });
 };
 
+Ex_2:
 
+app.service("my_service",my_service);
+function my_service($http) {
+     this.getData = function (arg1) {
+         return $http.post("http://test-routes.herokuapp.com/test/uppercase",
+                            arg1)
+                            .then(function (posRes) {
+             return posRes;
+         },function (errRes) {
+             return errRes;
+         });
+     };
+};
+
+app.controller("ctrl",ctrl);
+        function ctrl($scope,my_service) {
+            $scope.postData = function (arg1) {
+                my_service.getData(arg1).then(function (res) {
+                    $scope.result = res;
+                });
+            };
+};
+
+<input type="text" ng-model="uname">
+<br><br>
+<button ng-click="postData({'message':uname})">Post</button>
+<br><br>
+<h1>{{result}}</h1>
+
+
+
+$q:
+---
+    - $q is the predefined service in angularjs.
+
+    - by using $q we can overcome the data redundency
+
+    Ex.
+        $q.all([my_service.fun_one(),my_service.fun_two()]).then(function (res) {
+               $scope.var_one = res[0];
+               $scope.var_two = res[1];
+        });
+
+    - by using "$q" we can implement the asyncronous communication
+
+            var deffered_one=$q.defer();
+            this.fun_one = function () {
+                return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php")
+                        .then(function (posRes) {
+                    deffered_one.resolve(posRes);
+                    return deffered_one.promise;
+                },function (errRes) {
+                    deffered_one.reject(errRes);
+                    return deffered_one.promise;
+                });
+            };
+
+
+3. $timeout
+
+    - this predefined service used to execute a perticular function with a given
+      time.
+
+Ex.
+    $timeout(fun_one,5000);
+    function fun_one(){
+        //Business logic
+    }
+
+
+
+4. $interval
+
+    - this predefined service used to execute a perticular function repetedely with
+      a given interval of time
+
+Ex.
+    $interval(fun_two,5000);
+    function fun_two(){
+        //Business logic
+    }
+
+5. $location
+    - this predefined service used to find the absolute path of web application.
 
 
 
