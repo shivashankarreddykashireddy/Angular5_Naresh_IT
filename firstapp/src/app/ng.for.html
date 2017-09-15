@@ -1,0 +1,21 @@
+<p *ngFor="let x of array_one;let i=index;
+                              let var_one=first;
+                              let var_two=last;
+                              let var_three=even;
+                              let var_four=odd">
+  {{x}}...{{i}}...{{var_one}}...{{var_two}}....{{var_three}}...{{var_four}}
+</p>
+
+<table border="2">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>age</th>
+  </tr>
+
+  <tr *ngFor="let x of array_two">
+      <td>{{x.id}}</td>
+      <td>{{x.name}}</td>
+      <td>{{x.age}}</td>
+  </tr>
+</table>
