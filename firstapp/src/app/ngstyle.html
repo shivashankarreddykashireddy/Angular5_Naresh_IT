@@ -1,0 +1,31 @@
+<!--<h1 [ngStyle]="{backgroundColor:'green'}">Hello</h1>
+
+<h1 [ngStyle]="array[0].name==='Hello_1'?{color:'red'}:{color:'blue'}">Hi</h1>
+
+<ul *ngFor="let x of array">
+  <li [ngStyle]="{color:getColor(x.age)}">{{x}}</li>
+</ul>-->
+
+<!--<ul *ngFor="let x of array">
+  <li [ngClass]="{
+    'text-success':x.name === 'Hello_1',
+    'text-primary':x.name === 'Hello_2',
+    'text-danger':x.name === 'Hello_3'
+  }">
+    {{ x.name }} ({{ x.age }})
+  </li>
+</ul>-->
+
+
+<ul *ngFor="let x of array">
+  <li [ngClass]="{
+    'text-success':x.age===20,
+    'text-danger':x.age===22,
+    'text-default':x.age===24,
+    'text-warning':x.age===26
+  }">
+    {{x | json}}
+  </li>
+</ul>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
