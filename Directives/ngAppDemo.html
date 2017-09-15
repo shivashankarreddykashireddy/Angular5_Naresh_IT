@@ -1,0 +1,128 @@
+<!--
+   ng-app:
+        angular framework starts the execution from ng-app directive.
+
+        ng-app directive takes the logical name of web application.
+
+        logical name of angular application optional for static angular applications
+
+        logical name of angular application mandatory for dynamic angular applications
+
+        we can have only one ng-app per angular application.
+
+        executing the angular application without ng-app called as manual bootstrap
+-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+    <div ng-app>
+        <h1>Addition.{{10+10}}</h1>
+        <div>
+            <h1>Subtraction.{{20-10}}</h1>
+        </div>
+    </div>
+    &lt;!&ndash; out of ng-app scope so can't execute&ndash;&gt;
+    <div>
+        <h1>Multiplication.{{10*10}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+    <h1>Addition.{{10+10}}</h1>
+    <h1>Subtraction.{{20-10}}</h1>
+    <h1>Multiplication.{{10*10}}</h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        //manual bootstrap of static angular application.
+        angular.bootstrap(document);
+    </script>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html>
+    <div ng-controller="ctrl">
+        <h1>{{var_one}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.var_one = "I am from controller !";
+        }
+
+        angular.bootstrap(document,["app"]);
+    </script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+    <div ng-app="app" ng-controller="ctrl_one">
+        <h1>{{var_one}}</h1>
+    </div>
+    <div id="my_div" ng-controller="ctrl_two">
+        <h1>{{var_two}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($scope) {
+          $scope.var_one="I am from auto bootstrap !";
+        };
+
+        app.controller("ctrl_two",ctrl_two);
+        function ctrl_two($scope) {
+            $scope.var_two="I am from manual bootstrap !";
+        };
+
+        angular.bootstrap((document.getElementById("my_div")),["app"]);
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

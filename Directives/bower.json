@@ -1,0 +1,7 @@
+{
+  "name":"durgasoft",
+  "dependencies":{
+    "angular":"latest",
+    "bootstrap": "latest"
+  }
+}
