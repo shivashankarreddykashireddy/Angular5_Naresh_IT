@@ -1,0 +1,30 @@
+Steps to Create the Gulp Application:
+-------------------------------------
+Step 1:
+    create the directory structure.
+
+-------------------
+GulpDemo
+    devEnv
+        html
+            sample_one.html
+            sample_two.html
+        css
+            sample_one.css
+            sample_two.css
+
+        js
+            sample_one.js
+            sample_two.js
+
+        bower.json
+
+        index.html
+-------------------------------
+
+
+
+
+
+
+
