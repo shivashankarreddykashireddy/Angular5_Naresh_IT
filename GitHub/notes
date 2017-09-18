@@ -130,10 +130,72 @@ Branch : AngularJS_7AM
 
 
 
+----------------------------------------------------
 
 
+Integration:
+-----------
+1 . Open the WebStrom IDE
 
 
+2. Select Checkout from Version Control
+        GitHub
+
+
+3. Click the Create API Token
+
+4. Enter the GitHub Details
+
+        Login : XXXXXXXXXXXXXXXXXXX
+
+        Password: XXXXXXXXXXXXXXXXX
+
+
+5. Click the Login (2 times)
+
+
+6. Enter the Repository Details
+
+    Git Repository : https://github.com/ajsnaresh/AJS_Classes.git
+
+    Parent Path    : D:\
+
+    Directory Path : AJS_Classes
+
+
+7. Click the Clone.
+
+
+8. Click the YES
+
+
+9. Switch to "AngularJS_7AM" Branch from "master" Branch.
+
+
+Commit & Push to Cloud Repository:
+------------------------------------
+
+1. ctrl + k
+
+2. Enter the Commit Message
+
+3. Click the "commit & push"
+
+4. click the "push"
+
+
+Pull the Code:
+--------------
+
+1. Select VCS from Menu
+
+2. Select Git
+
+3. Select Pull
+
+4. Check the AngularJS_7AM Branch
+
+5. Pull
 
 
 
