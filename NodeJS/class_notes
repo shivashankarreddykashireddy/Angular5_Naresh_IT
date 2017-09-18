@@ -139,9 +139,84 @@ Ex.
     index.html
 
 
+Ex_3:
+    reading the data from mysql database
+
+> create schema demo;
+
+> use demo;
+
+> create table products(p_id integer,p_name varchar(20),p_cost integer);
+
+> insert into products values(111,'p_one',10000);
+
+> select * from products;
 
 
+server.js
+---------
+var express = require("express");
+var mysql = require("mysql");
 
+var app = express();
+
+app.use(express.static(__dirname+"/../Read_MySQLData"));
+
+
+//connection object
+var connection = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"root",
+    database:"demo"
+});
+
+
+//connect to database.
+connection.connect();
+
+
+//Rest API
+app.get("/mysql", function(req,res){
+    connection.query("select * from products",function(err,recordsArray,fields){
+        res.send(recordsArray);
+    });
+});
+
+
+app.listen(8080);
+
+
+Ex_4:
+    reading the data from mongodb
+
+    - mongodb is the light weight database compared to traditional bases like
+      mysql, oracle,.....
+
+    - mongodb supports json objects
+
+    - mongodb follows "client-server" architecture.
+
+
+mongodb queries:
+----------------
+1. start the mongo server.
+> mongod
+
+2. connect to server.
+> mongo
+
+3. create and switch to database.
+> use demo;
+
+4. create collection.
+> db.createCollection("products");
+
+5. insert the data
+> db.products.insert({"p_id":111,"p_name":"p_one","p_cost":10000});
+
+6.query the collection
+> db.products.find();
 
 
 
