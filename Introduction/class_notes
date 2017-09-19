@@ -1,0 +1,73 @@
+AngularJS:
+----------
+    - AngularJS is the client side javascript framework.
+
+    - AngularJS Follows the MVC Design Pattern.
+
+        M - Model
+            - javascript variables called as model in angularjs.
+
+            Ex.
+                var data = "Data from DataBase Soon...!";
+
+        [Note : where "data" variable called as model in angular js]
+
+        V - View
+
+            - We can use HTML / HTML 5 / JADE used as View in angular js.
+
+        C - Controller
+            - java script functions called as Controllers in angular js
+
+            Ex.
+                function ctrl(){
+                   //Business Logic
+                }
+
+        [Note : where "ctrl" called as controller in angular js]
+
+
+- AngularJS Used to Develop the Web Applications.
+
+- We can develop the Web Applications by using JavaScript.
+
+- The Vendor for AngularJS is Google.
+
+
+
+Advantages Of AngularJS:
+------------------------
+1. Open Source Code
+
+    - As a Developer we can customize the framework accroding to application
+      requirement.
+
+    Ex.
+        angular js  + "our own features"  ===>  "our own framework"
+
+
+2. AngularJS Supports Modules (Predefined Modules & Custom Modules)
+
+    [Module : collection of predefined functionality]
+
+1. ngAnimate
+    - this module used to develop the Animations in angular applications
+
+2. ngStorage
+    - this module used to work with the Storages.
+
+    - we have two types of Storages.
+
+        1. localStorage
+        2. sessionStorage
+
+3. ngMessages
+    - this module used to work with the validations.
+
+
+
+
+
+
+
+

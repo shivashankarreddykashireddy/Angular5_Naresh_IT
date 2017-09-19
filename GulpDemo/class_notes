@@ -17,10 +17,60 @@ GulpDemo
             sample_one.js
             sample_two.js
 
-        bower.json
+bower.json
 
-        index.html
+index.html
 -------------------------------
+
+Step 2:
+    prepare the Gulp Script
+
+Gulpfile.js
+-----------
+//import modules
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
+var minifyHTML = require("gulp-minify-html");
+var minifyCSS = require("gulp-minify-css");
+var gulp = require("gulp");
+var bower = require("gulp-bower");
+var open = require("gulp-open");
+
+
+
+//create the task_one
+gulp.task("minify_html",function(){
+    gulp.src("./devEnv/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(minifyHTML())
+        .pipe(gulp.dest("./prodEnv/html"));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
