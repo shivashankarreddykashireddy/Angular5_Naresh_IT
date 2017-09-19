@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+
+{{db_user}}
+{{db_password}}
+{{list_of_table}}
+<p ng-repeat="x in name_of_tables">
+    {{x}}
+</p>
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>sal</th>
+    </tr>
+
+    <tr ng-repeat="x in emp">
+        <td>{{x.e_id}}</td>
+        <td>{{x.e_name}}</td>
+        <td>{{x.e_sal}}</td>
+    </tr>
+</table>
+
+
+<div ng-init="db_user='root';
+              db_password='root';
+              list_of_table=3;
+              name_of_tables=['emp_1','emp_2','emp_3'];
+              emp=[
+              {'e_id':111,'e_name':'hello_1','e_sal':50000},
+              {'e_id':222,'e_name':'hello_2','e_sal':60000},
+              {'e_id':333,'e_name':'hello_3','e_sal':70000},
+              {'e_id':444,'e_name':'hello_4','e_sal':80000},
+              {'e_id':555,'e_name':'hello_5','e_sal':90000}]"></div>
+<script src="bower_components/angular/angular.min.js"></script>
+
+
+</html>
