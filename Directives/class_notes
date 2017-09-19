@@ -34,3 +34,39 @@ export class Directives_Example1{
 }
 
 
+
+
+
+
+
+
+
+
+submit:
+
+    - this directive used to submit the whole form at a time to the controller.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
