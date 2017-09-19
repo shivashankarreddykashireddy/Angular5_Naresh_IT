@@ -1,0 +1,218 @@
+Repository:
+    - Repositories are used to collabrate the work flow
+      (tasks) in projects.
+
+    - GitHub is the Open Source Repository
+      maintained by google.
+
+    - "Git" is the Tool used to interact with the "GitHub".
+
+Installation Of Git:
+--------------------
+website   : https://git-scm.com/downloads
+
+file name : Git-2.14.1-64-bit.exe
+
+
+GitHub Operations:
+------------------
+
+1. Create the Repository Locally.
+
+2. Add the User Credentials to the Repository.
+
+3. Create the files to the Repository.
+
+4. Commit the Files to the Repository.
+
+5. Create the Branches
+
+6. Merge the Branches.
+
+7. Integration Of GitHub to the "Visual Studio Code"
+
+8. Commit the Files to Cloud Repository.
+
+9. Push the Code to the Cloud Repository.
+
+10. Pull the Code From Cloud Repository.
+
+11. patches in GitHub.
+
+12. Stash / Unstash Changes
+
+13. Version Comparison
+
+14. Merge Conflict Resolve tool.
+
+
+Create the Repository Locally.
+------------------------------
+    - create the directory
+
+        Ex.
+            demo
+
+    - launch the "GitBash Here" terminal on
+      right click of demo folder.
+
+
+    - execute the following command
+
+    > git init
+
+
+[Note : automatically "demo" folder
+        converted as local repository]
+
+
+Add the User Credentials to the Repository.
+-------------------------------------------
+name:
+-----
+> git config --global user.name "nareshIT"
+
+
+email:
+------
+> git config --global user.email "hr@nareshit.in"
+
+
+Create the files to the Repository
+----------------------------------
+
+> touch sample.html
+
+[Note : Automatically "sample.html" file created in
+        Repository with "untracked" mode]
+
+
+Commit the Files to the Repository
+----------------------------------
+
+> git status
+
+    - "red color" labeled files indicated untracked files
+       in repository.
+
+
+> git add sample.html
+
+> git commit
+
+> press "i"
+
+> type "initial commit"
+
+> press "ESC"
+
+> type ":wq"
+
+> press "Enter" key
+
+
+From 2nd Commit Onwards:
+------------------------
+
+> git add sample.ts
+
+> git commit -m "sample code added"
+
+
+
+Create the Branch
+-----------------
+> git branch Angular4
+
+> git checkout Angular4
+
+[Note : Automatically files from the "master branch"
+        available to "child branch"(Angular4)]
+
+
+Merge the Branches
+------------------
+> git checkout master
+
+> git merge Angular4
+
+
+
+Integration Of GitHub to the "Visual Studio Code"
+-------------------------------------------------
+
+1. create the account with the GitHub.
+
+    WebSite : https://github.com/join/
+
+
+2. Download and Install the Visual Studio Code
+
+    Website   : https://code.visualstudio.com/download
+
+    file name : VSCodeSetup-x64-1.16.1.exe
+
+
+3. Checkout the Code the from the Cloud Repository.
+
+    URL : https://github.com/ajsnaresh/AJS_Classes.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
