@@ -1,0 +1,221 @@
+GitHub Operation:
+-----------------
+
+1. Create the Repository Locally.
+
+2. Add the User Credentials to the Repository
+
+3. Create the Files to the Repository
+
+4. Commit the Files to the Repository.
+
+5. Create the Branches
+
+6. Merge the Branches
+
+7. Stash Changes / Unstash Changes In Repository
+
+8. Integration Of Cloud Repository to IDE
+
+	Ex.
+		VisualStudioCode
+
+
+9.Commit the Changes to Cloud Repository
+
+10. Push the Code to the Cloud Repository
+
+11. Pull the Code from Cloud Repository
+
+
+Create the Repository Locally
+-----------------------------
+	
+	- create the directory (folder)
+		
+	Ex.
+		github demo
+
+
+	- launch the "gitbash here" terminal on
+          rigth click of directory
+
+	- execute the following command
+
+	> git init
+
+[Note : Automatically "github demo" folder converted
+        as local repository]
+
+Add the User Credentials to the Repository
+------------------------------------------
+1. name
+>git config --global user.name "NareshIT"
+
+
+2. email
+>git config --global user.email "hr@nareshit.in"
+
+
+Create the Files to the Repository
+----------------------------------
+
+> touch sample.html
+
+[Note : "touch"	command automatically creates
+        the files in repository]
+
+[Note : by default the files are in unsaved /  
+        uncommitted / untracked mode]
+
+> git status
+	- used to know the status of files
+
+[Note : "red color labeled" files indicating the
+        untracked files in repository]
+	
+
+Commit the Files to the Repository
+----------------------------------
+> git add sample.html
+
+> git commit
+
+> press "i" [Enabling the --INSERT-- mode]
+
+> type "initial commit"
+
+> press "ESC"
+
+> type ":wq"
+
+> press "Enter"
+
+
+from 2nd commit onwards:
+------------------------
+> git add sample.html
+
+> git commit -m "let keyword introduced"
+
+> git log
+
+	- used to know the number of commits
+          in repository. 
+
+
+Create the Branches
+-------------------
+
+> git branch AngularJS_3PM
+
+> git checkout AngularJS_3PM
+
+[Note : automatically child branches contains
+        the master branch files]
+Merge the Branches
+------------------
+
+> git checkout master
+
+> git merge AngularJS_3PM
+
+
+Stash Changes / Unstash Changes In Repository
+---------------------------------------------
+
+   - Holding the changes tempararly called as
+     Stash.
+
+  -  UnHolding the temparary changes called as	
+     unStash
+
+> git stash(0)
+	- making the code as hold in 0th index.
+
+> git stash pop(0)
+	- making the 0th index code as unhold.
+	
+
+Integration Of Cloud Repository to IDE
+--------------------------------------
+1. Download and Install the Git.
+
+website   : https://git-scm.com/downloads
+file name : Git-2.14.1-64-bit.exe
+
+
+2. Download and install NodeJS
+
+website   : https://nodejs.org/en/download/
+file name : node-v6.11.3-x64.msi
+
+
+3. create the account with the GitHub.
+website : https://github.com/join/
+
+
+4. Download VisualStudioCode
+
+website   : https://code.visualstudio.com/download
+file name : VSCodeSetup-x64-1.16.1.exe
+
+
+5. Checkout the code from the Cloud Repository
+
+URL : https://github.com/ajsnaresh/AJS_Classes.git
+
+
+
+- Open the Visual Studio Code
+
+- Open the Command Pallete  (ctrl + shift + p)
+
+- Git : clone
+
+- https://github.com/ajsnaresh/AJS_Classes.git
+
+- D:/VS_Code
+
+- Enter
+
+- click the open repository
+
+- Switch to AngularJS@3PM Branch from master Branch
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
