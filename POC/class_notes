@@ -1,0 +1,56 @@
+Step 1:
+    Create the table in mysql database for
+    Authentication.
+
+>create schema poc;
+
+>use poc;    
+
+>create table login_details(uname varchar(20),upwd varchar(20));
+
+>insert into login_details values('admin','admin');
+
+
+Step 2:
+    Create the REST API for login.
+server.js
+---------
+var express = require("express");
+var mysql   = require("mysql");
+var jwt     = require("jwt-simple");
+var bodyparser = require("body-parser");
+var fs = require("fs");
+var mongodb = require("mongodb");
+
+var app = express();
+app.use(express.static(__dirname+"/../POC"));
+var connection = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"root",
+    database:"poc"
+});
+
+connection.connect();
+var tokensArray=[];
+
+app.post("/login",function(req,res){
+    var uname = req.body.uname;
+    var upwd = req.body.upwd;
+
+    connection.query("select uname from login_details 
+                        where uname='"+uname+"'",
+            function(err,recordsArray,fields){
+                
+                if(recordsArray.length>0){
+                    var token = jwt.encode({'uname':uname},
+                                            'hr@tcs.com');
+                    tokensArray.push(token);
+                    res.send({'login':'success',
+                              'token':token});
+                }else{
+                    res.send({'login':'fail'});
+                }
+    });
+});
+
