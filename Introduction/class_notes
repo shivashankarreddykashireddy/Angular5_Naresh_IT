@@ -11,3 +11,143 @@
 6. Decorators in TypeScript
 
 7. Promises in TypeScript
+
+
+
+
+
+TypeScript:
+-----------
+
+    - TypeScript is the Programming language introduced
+      by microsoft.
+
+    - TypeScript Follows the ECMA Standards.
+
+    - ECMA Representing the latest version of JavaScript.
+
+    - TypeScript used to Develop the Web Applications.
+
+    - We can transpile the TypeScript by using "tsc"
+      compiler.
+
+    - "tsc" compiler will produces the equalent
+       JavaScript.
+
+
+Ex.
+
+" sample.ts  ==> tsc  ==> sample.js "
+
+    - in general browsers won't understands 
+      the TypeScript, so we must convert the
+      TypeScript to JavaScript.
+
+    - converting the TypeScript to JavaScript called As
+      transpilation.
+
+
+Installation of TypeScript Compiler  (tsc)
+-------------------------------------------
+
+1. Download and Install the NodeJS
+
+
+2. Install the TypeScript by using following command.
+
+> npm install -g tsc
+
+[Note : automatically "tsc@1.20150623.0" version will
+        be installed globally]
+
+[Note : npm stands for "Node Packaging Manager"
+        npm is the integrated tool in NodeJS
+        npm used to install dependecies like
+            1. bower
+            2. yarn
+            3. JHINT
+            4. Gulp
+            5. Grunt
+            6. Karma
+            7. e2e
+                --
+                --
+]
+
+
+Variables:
+----------
+    - Variables in TypeScript used to store the data.
+
+    - we can store "all types" of data by using TypeScript
+      Variables.
+
+Ex.
+    Boolean
+    -------
+    var var_one:boolen = true;
+    let var_one:boolen = true;
+    var var_one=true;
+
+
+    number
+    ------
+    let my_num:number = 100;
+    let my_num:number = 0x234;
+    let my_num:number = ox102;
+    let my_num:number = 0x1010101;
+
+    let my_num:number=100.10;
+
+
+    string:
+    -------
+    let data:string="data from database soon...!";
+
+
+    any:
+    ---
+    let data:any = 100;
+    let data:any = {'key1':'Hello_1','key2':'Hello_2'};
+    let data:any = new Student();
+
+
+    array:
+    ------
+    let data:[]=[10,20,30,40,50];
+    let data:<number>[] = [100,200];
+
+
+
+Ex.
+    let data:number = "Hello";
+[Note : TS:2321: Incompatable Types]    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
