@@ -1,0 +1,60 @@
+<!--
+<script>
+function fun_one(){
+    document.write("Welcome...!");
+}    
+console.log(fun_one);  //returns function defination
+fun_one();             //function calling
+</script>
+-->
+
+<!--
+<script>
+    function fun_one(){
+        fun_two();
+    }
+
+    function fun_two(){
+        document.write("<h1>Welcome....!</h1>");
+    }
+    fun_one();
+</script>
+-->
+<!--
+<script>
+    function fun_one(){
+        return fun_two;
+    }
+    function fun_two(){
+        return "Welcome...!";
+    }
+    document.write(fun_one()());
+</script>
+-->
+
+<script>
+    function fun_one(arg1){
+        document.write(arg1());
+    }
+    function fun_two(){
+        return "Welcome";
+    }
+    fun_one(fun_two);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
