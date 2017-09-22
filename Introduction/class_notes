@@ -124,6 +124,173 @@ Ex.
 [Note : TS:2321: Incompatable Types]    
 
 
+functions:
+----------
+    - functions are used to write the business logic.
+
+    - by using functions we can reuse the business logic.
+
+    - we have two types of functions.
+
+        1. named functions
+        2. anonymous functions
+
+named functions:
+----------------
+    - the function with name called as named function.
+
+
+Syntax:
+-------
+    function fun_name():return_type{
+        //business logic
+    }
+
+    fun_name();
+
+Ex_1:
+-----
+JavaScript:
+-----------
+function fun_one(){
+    document.write("JavaScript Function");
+}
+
+
+TypeScript:
+-----------
+function fun_one():void{
+    document.write("TypeScript Function");
+}
+
+Ex_2:
+----
+JavaScript:
+-----------
+function fun_one(arg1,arg2,arg3){
+    console.log(arg1+"..."+arg2+"..."+arg3);
+}
+fun_one("Hello",100,true);
+
+TypeScript:
+-----------
+function fun_one(arg1:string,
+                 arg2:number,
+                 arg3:boolen):void{
+     
+     console.log(arg1+"..."+
+                 arg2+"..."+
+                 arg3);   
+}
+fun_one("Hello",100,true);
+
+Ex_3:
+-----
+JavaScript:
+-----------
+function fun_one(arg1){
+    return arg1;
+}
+
+function fun_two(){
+    return "Welcome...!";
+}
+
+fun_one(fun_two());
+
+
+TypeScript:
+-----------
+function fun_one(arg1:fun_two):fun_two{
+    return arg1;
+}
+
+function fun_two():string{
+    return "welcome...!";
+}
+
+fun_one(fun_two());
+
+Ex_4:
+-----
+JavaScript:
+-----------
+function fun_one(arg1){
+    return arg1;
+}
+function fun_two(arg2){
+    return arg2;
+}
+function fun_three(arg3){
+    return fun_two(fun_one(arg3));
+}
+fun_three("Welcome...!");
+
+TypeScript:
+-----------
+function fun_one(arg1:string):string{
+    return arg1;
+}
+function fun_two(arg2:fun_one):fun_one{
+    return arg2;
+}
+
+function fun_three(arg3:string):fun_two{
+    return arg3;
+}
+
+
+Ex_4:
+-----
+JavaScript:
+----------
+array = [
+    new student(),
+    new student(),
+    new student(),
+    new student()
+];
+function fun_one(){
+    return array;
+}
+
+TypeScript:
+----------
+array:<student>[]=[
+    /*new student(),
+    new student(),
+    new student(),
+    new student()*/
+    {},
+    {},
+    {},
+    {} 
+];
+
+function fun_one():<student>[]{
+    return array;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
