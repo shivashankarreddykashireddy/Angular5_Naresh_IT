@@ -182,6 +182,225 @@ index.html
     <div ui-view></div>
 </html>
 
+Step 5:
+-------
+    - implement the Nested Routing.
+
+-----------
+templates
+    about.html
+    contact.html
+    portfolio.html
+-------------
+
+---------------
+controllers
+    aboutController.js
+    contactController.js
+    portfolioController.js
+----------------    
+
+
+---------------
+services
+    homeService.js
+---------------
+
+home.html
+---------
+<a ui-sref=".about"><b>About</b></a>&emsp;&emsp;&emsp;&emsp;
+<a ui-sref=".contact"><b>Contact</b></a>&emsp;&emsp;&emsp;&emsp;
+<a ui-sref=".portfolio"><b>Portfolio</b></a>&emsp;&emsp;&emsp;&emsp;
+<button ng-click="logout()">Logout</button>
+
+<br><br>
+<div ui-view></div>
+
+about.html
+----------
+<h1>{{result}}</h1>
+
+contact.html
+----------
+<h1>{{result}}</h1>
+
+portfolio.html
+----------
+<h1>{{result}}</h1>
+
+aboutController.js
+------------------
+app.controller("aboutController",aboutController);
+function aboutController($scope,homeService){
+    homeService.getStaticData().then(function(res){
+        $scope.result = res;
+    });
+}
+
+contactController.js
+--------------------
+app.controller("contactController",contactController);
+function contactController($scope,homeService){
+    homeService.getMySQLData().then(function(res){
+        $scope.result = res;
+    });
+}
+
+portfolioController.js
+----------------------
+app.controller("portfolioController",portfolioController);
+function portfolioController($scope,homeService){
+    homeService.getMongoDBData().then(function(res){
+        $scope.result = res;
+    });
+}
+
+homeService.js
+--------------
+app.service("homeService",homeService);
+function homeService($http,$localStorage){
+    this.getStaticData = function(){
+        return $http.post("http://localhost:8080/static",
+                         {'token':$localStorage.poc.data.token})
+                                    .then(function(posRes){
+                                return posRes;
+                         },function(errRes){
+                                return errRes;
+                         });
+    }
+
+    this.getMySQLData = function(){
+        return $http.post("http://localhost:8080/mysql",
+                         {'token':$localStorage.poc.data.token})
+                                    .then(function(posRes){
+                                return posRes;
+                         },function(errRes){
+                                return errRes;
+                         });
+    }
+
+    this.getMongoDBData = function(){
+        return $http.post("http://localhost:8080/mongodb",
+                         {'token':$localStorage.poc.data.token})
+                                .then(function(posRes){
+                                return posRes;
+                         },function(errRes){
+                                return errRes;
+                         });
+    }
+
+}
+
+
+config.js
+---------
+   .state("home.about",{
+        url:"/about",
+        templateUrl:"templates/about.html",
+        controller:"aboutController"
+    })
+    .state("home.contact",{
+        url:"/contact",
+        templateUrl:"templates/contact.html",
+        controller:"contactController"
+    })
+    .state("home.portfolio",{
+        url:"/portfolio",
+        templateUrl:"templates/portfolio.html",
+        controller:"portfolioController"
+    })
+
+Step 6:
+
+    Create the Node services
+
+/static
+-------
+sample.json
+------------
+{
+    "products":[
+        {"p_id":111,"p_name":"p_one","p_cost":10000},
+        {"p_id":222,"p_name":"p_two","p_cost":20000},
+        {"p_id":333,"p_name":"p_three","p_cost":30000},
+        {"p_id":444,"p_name":"p_four","p_cost":40000},
+        {"p_id":555,"p_name":"p_five","p_cost":50000}
+    ]
+}
+
+app.post("/static",function(req,res){
+    if( req.body.token  == tokensArray[0] ){
+        fs.readFile(__dirname+"/sample.json", function(err,data){
+            res.send(data);
+        });
+    }else{
+        res.send({"404":"UnAuthenticated User !"});
+    }
+});
+
+
+/mysql
+------
+mysql> use poc;
+Database changed
+mysql> create table products(p_id integer,
+                             p_name varchar(20),
+                             p_cost integer);
+Query OK, 0 rows affected (0.35 sec)
+
+mysql> insert into products values(111,'p_one',10000);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into products values(222,'p_two',20000);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into products values(333,'p_three',30000);
+Query OK, 1 row affected (0.04 sec)
+
+app.post("/mysql",function(req,res){
+    if( req.body.token  == tokensArray[0] ){
+        connection.query("select * from products",
+                    function(err,recordsArray,fields){
+                res.send(recordsArray);
+        });
+    }else{
+        res.send({"404":"UnAuthenticated User !"});
+    }
+});
+
+
+/mongodb
+--------
+app.post("/mongodb",function(req,res){
+    if( req.body.token  == tokensArray[0] ){
+        poc.connect("mongodb://localhost:27017/poc",
+                    function(err,db){
+            db.collection("products").find().toArray(
+                        function(err,array){
+                    res.send(array);
+            });
+        }); 
+    }else{
+        res.send({"404":"UnAuthenticated User !"});
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

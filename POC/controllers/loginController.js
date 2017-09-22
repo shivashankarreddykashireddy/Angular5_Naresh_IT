@@ -5,7 +5,7 @@ function loginController($scope,$localStorage,$location,loginService){
         loginService.authenticate($scope.obj).then(function(res){
             if(res.data.login=="success"){
                 $localStorage.poc=res;
-                $location.path("/home");
+                $location.path("/home/about");
             }else{
                 alert("Invalid Details !");
             }
