@@ -32,6 +32,7 @@ fun_one();             //function calling
 </script>
 -->
 
+<!--
 <script>
     function fun_one(arg1){
         document.write(arg1());
@@ -41,6 +42,85 @@ fun_one();             //function calling
     }
     fun_one(fun_two);
 </script>
+-->
+
+<!--
+<script>
+    function fun_one(arg1,arg2){
+        document.write("<h1>"+
+                    (arg1()()+arg2()())+
+                    "</h1>");
+    }
+
+    function fun_two(){
+        return fun_four;
+    }
+
+    function fun_three(){
+        return fun_five;
+    }
+
+    function fun_four(){
+        return 100;
+    }
+
+    function fun_five(){
+        return 200;
+    }
+
+    fun_one(fun_two,fun_three);
+
+</script>
+-->
+
+<!--
+<script>
+    var fun_one = function(){
+        return "Welcome to Anonymous Functions.";
+    }
+
+    document.write("<h1>"+fun_one+"</h1>");
+    document.write("<h1>"+fun_one()+"</h1>");
+</script>
+-->
+
+<!--
+
+<script>
+    var fun_one = function(arg1,arg2){
+        console.log(arg1()+arg2());
+    }
+
+
+    fun_one(function(){return 100;},
+            function(){return 200;});
+</script>
+
+
+-->
+
+<script>
+    var fun_one = function(arg1,arg2,arg3){
+        document.write("<h1>"+arg1+"<==>"+
+                        arg2+"<==>"+
+                        arg3+"</h1>");
+    }
+
+    var fun_two = function(){
+        return "AngularJS";
+    }
+
+    var fun_three = function(){
+        return "NodeJS";
+    }
+
+    var fun_four = function(){
+        return "MongoDB";
+    }
+
+    fun_one(fun_two(),fun_three(),fun_four());
+</script>
+
 
 
 

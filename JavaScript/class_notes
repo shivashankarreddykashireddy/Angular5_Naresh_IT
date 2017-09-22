@@ -79,6 +79,32 @@ Syntax.
   fun_name();
 
 
+Anonymous functions:
+--------------------
+- the functions with out name called
+  as Anonymous functions.
+
+- Anonymous functions are more secured
+  compared to named functions.
+
+- Anonymous functions utilizes the memory
+  efficiently.     
+
+Syntax:
+-------
+  var x = function(){
+    //Logic Goes Here
+  };
+
+  x();
+
+  
+
+
+
+
+
+
 
 
 
