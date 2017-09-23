@@ -100,6 +100,83 @@ Syntax:
 
   
 
+JSON:
+-----
+    - JSON Stands for Java Script Object Notation.
+
+    - JSON Used to Transfer the Data Over the Network.
+
+    - JSON is light weight compared to XML.
+
+Syntax.
+
+1. Objects - { }
+
+2. Arrays  - [ ]
+
+3. Data    - key&value
+
+
+
+Ex_1:
+
+var data = {
+    "sub_one":"AngularJS",
+    "sub_two":"NodeJS",
+    "sub_three":"FireBase"
+};
+
+console.log(data.sub_one);
+console.log(data.sub_two);
+console.log(data.sub_three);
+
+Ex_2:
+
+var data = {
+    "login":login,
+    "logout":logout()
+};
+
+function login(){
+    console.log("Welcome to Login Module...!");
+}
+
+function logout(){
+    console.log("Welcome to Logout Module...!");
+}
+
+data.login();
+data.logout;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

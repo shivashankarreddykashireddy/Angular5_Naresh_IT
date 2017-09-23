@@ -1,0 +1,58 @@
+<!--
+<script>
+    var data = {
+      "sub_one":"AngularJS",
+      "sub_two":"NodeJS",
+      "sub_three":"FireBase"
+    };
+
+    console.log(data.sub_one+"...."+data.sub_two+"..."+data.sub_three);
+</script>-->
+
+
+<!--
+<script>
+    var data = {
+      "login":login
+    };
+
+    function login() {
+        console.log("Welcome...!");
+    }
+
+    data.login();
+</script>
+-->
+
+
+
+<script>
+    var data = {
+                    "records":[
+                            {"Name":"NareshIT",
+                                "City":"Hyd",
+                                "Country":"India"}
+                    ]
+    };
+
+    var result="";
+    for(var i=0;i<data.records.length;i++){
+        var obj = data.records[i];
+        var _name = obj.Name;
+        var _city = obj.City;
+        var _country = obj.Country;
+        result=result+_name+"..."+_city+"..."+_country+"<br>";
+    }
+    document.write(result);
+
+</script>
+
+
+
+
+
+
+
+
+
+
