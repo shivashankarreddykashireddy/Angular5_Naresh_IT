@@ -273,6 +273,30 @@ function fun_one():<student>[]{
 
 
 
+Anonymous Functions:
+--------------------
+    - the functions without name called as Anonymous Functions.
+
+    - Anonymous functions are more secured compared
+      to Named Functions.
+
+    - Anonymous function utilizes the heap memory efficiently.
+
+    - Anonymous Functions called as "Arrow Functions" in TypeScript.
+
+
+Ex.
+    var x = function(){
+        //Logic
+    }
+
+    x();
+
+
+
+
+
+
 
 
 
