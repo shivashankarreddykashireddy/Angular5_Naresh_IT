@@ -1,0 +1,37 @@
+ng-class-odd:
+    - this directive used to apply the css classes to the odd rows of table.
+
+Syntax.
+    ng-class-odd="'my_class'"
+
+
+
+ng-class-even:
+    - this directive used to apply the css classes to the even rows of table.
+
+
+Syntax.
+    ng-class-even="'my_class'"
+
+
+
+ng-include:
+    - this directive used to include "one template" to "another template".
+
+
+-----------------------
+Directives
+    table.html
+    ngIncludeDemo.html
+    app.js
+    ctrl.js
+    my_style.css
+-----------------------
+
+
+
+
+
+
+
+
