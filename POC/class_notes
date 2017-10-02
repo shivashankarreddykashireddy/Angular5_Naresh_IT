@@ -387,6 +387,67 @@ app.post("/mongodb",function(req,res){
 
 
 
+Step 7:
+    implement the logout functionality.
+
+homeController.js
+-----------------
+app.controller("homeController",homeController);
+function homeController($scope,$location,$localStorage){
+    $scope.logout = function(){
+        delete $localStorage.poc;
+        $location.path("/login");
+    }
+}
+
+
+Step 8:
+    Implement the Interceptor.
+
+    - Interceptors are used to handle the invalid routings.
+
+    - "$stateChangeStart" is the predefined interceptor used to handle the invalid routings in single page applications.
+
+    - in general we will implement interceptors by using rootScope.
+
+    - interceptors will execute before each routing in single page application.
+
+Ex.
+
+app.run(run).config(config);
+function run($localStorage,$rootScope,$location) {
+    $rootScope.$on("$stateChangeStart",function (event,
+                                                 fromState,
+                                                 fromParams,
+                                                 toState,
+                                                 toParams) {
+        if(!$localStorage.poc){
+            $location.path("/login");
+        }
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
