@@ -29,6 +29,138 @@ Directives
 -----------------------
 
 
+ng-show:
+-------
+    - this directive used to show / hide the elements based on condition.
+
+    - ng-show directive won't works with HTML DOM Directly.
+
+
+Syntax.
+    ng-show = "true" / "false"
+
+true - it will show elements.
+
+false - it will hide the elements.
+
+ng-hide:
+--------
+    - it will show / hide the HTML Elements Based on Condition.
+    - ng-hide directive won't works with HTML DOM.
+
+Syntax.
+------
+    ng-hide = "true" / "false"
+
+    true - hiding the HTML Element.
+    false - show the HTML Element.
+
+
+ng-init:
+-------
+    - ng-init directive used to initilize the members at booting time
+      of angular application.
+
+    - ng-init initilized members are available to application scope.
+
+    - we can initilize the members in the form of a "key&value" pairs.
+
+    - key & value separated with the help "="
+
+        Ex.
+               "db_user"="root"
+
+    - each "key&value" pair separated with the help of ";"
+
+        Ex.
+            "db_user"="root";
+            "db_password"="root"
+
+
+Mouse Events:
+-------------
+
+ng-mousedown /
+ng-mouseup
+
+
+ng-mouseenter /
+ng-mouseleave
+                    = "Expression" /
+                      "User Defined Function"/
+                      "User Defined function with parameters"
+ng-mouseover /
+ng-mouseout
+
+
+ng-mousemove
+
+
+
+
+ng-cloak:
+---------
+    - this directive used to avoid the flickering / blinking of web page while
+      refreshing with expressions.
+
+
+Ex.
+    <div ng-controller="ctrl_one" ng-cloak>
+        {{var_one}}
+    </div>
+
+    <div ng-controller="ctrl_two" ng-cloak>
+        {{var_two}}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

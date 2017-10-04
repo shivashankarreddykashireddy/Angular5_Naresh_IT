@@ -1,0 +1,118 @@
+Create the Angular4 Project:
+----------------------------
+
+>ng new Demo
+
+
+ -  in general we have two types of applications.
+
+ 1. static application
+
+ 2. dynamic application
+
+
+static application:
+-------------------
+    - if view won't interacts with controller for dynamic data
+      then such type of application called as static application.
+
+
+dynamic application:
+--------------------
+    - if view interacts with controller for dynamic data
+      then such type of application called as dynamic application.
+
+
+[Note : we can develop only dynamic applications by using
+        angular4]
+
+[Note : we can call "controllers" as "components" in angular4]
+
+
+Ex.
+-----------
+Demo
+    src
+        app
+            first.component.ts
+-----------
+
+
+first.component.ts
+------------------
+import { Component } from "@angular/core";
+@Component({
+    selector:"first-app",
+    templateUrl:"./first.component.html"
+    styleUrls   : ["./first.component.css"]
+})
+export class FirstComponent{
+    sub_one:string;
+    sub_two:string;
+    sub_three:string;
+    constructor(){
+        this.sub_one="Angular4";
+        this.sub_two="NodeJS";
+        this.sub_three="MongoDB";
+    }
+}
+
+----------
+Demo
+    src
+        app
+            app.module.ts
+----------
+
+app.module.ts
+-------------
+import {NgModule} from "@angular/core";
+import {FirstComponent} from './first.component';
+import {BrowserModule} from '@angular/platform-browser';
+
+@NgModule({
+    declarations:[
+        FirstComponent
+    ],
+    imports:[
+        BrowserModule
+    ],
+    providers:[
+    ],
+    bootstrap:[FirstComponent]
+})
+export class AppModule{
+}
+
+--------
+Demo
+    main.ts
+---------
+
+import {platformBrowserDynamic} from
+"@angular/platform-browser-dynamic";
+
+import {AppModule} from './app.module';
+
+platformBrowserDynamic().bootStrapModule(AppModule);
+
+
+
+
+
+first.component.html
+--------------------
+<h1>{{sub_one+"<==>"+sub_two+"<==>"+sub_three}}</h1>
+
+first.component.css
+--------------------
+h1{
+    color:red;
+}
+
+
+index.html
+----------
+<first-app></first-app>
+
+
