@@ -1,0 +1,173 @@
+
+    - creating our own directive based on application requirement called as
+      Custom Directive.
+
+    - in angularjs we can use custom directives in 4 ways.
+
+        1. Element
+        2. Attribute
+        3. CSS Class
+        4. Comment
+
+    Ex.
+        my_dir
+
+    <my_dir></my_dir>            //Element
+
+    <div my_dir></div>           //Attribute
+
+    <div class="my_dir"></div>   //CSS Class
+
+    <!-- my_dir -->              //Comment
+
+
+properties of custom directives.
+--------------------------------
+
+1. restrict
+    this property describes the usage of custom directive.
+
+Ex.
+    restrict:"E"   //Element
+    restrict:"A"   // Attribute
+    restrict:"C"   //CSS Class
+    restrict:"M"   //Comment
+    restrict:"AE"  //Attribute & Element
+
+[Note : the default value of restrict property is "E"]
+
+
+2. template
+    - this property used to add the inline html to the Custom Directive.
+
+Ex.
+    template:"<h1>Welcome to Custom Directives !</h1>"
+
+
+3. templateUrl
+    - this property used to link the external template to the custom directive.
+
+Ex.
+    templateUrl : "sample.html"
+
+
+4. controller
+    - this property used to define the controller to the external template of a
+      custom directive.
+
+Ex.
+    templateUrl:"sample.html",
+    controller : "sample"
+
+
+5. scope
+    - this property used to establish the relation between custom directive to
+      custom controller.
+
+
+
+6. link
+    - this property used to manipulate the CSS Present in external template of
+      a custom directive.
+
+Syntax of Custom Directive:
+---------------------------
+app.directive("my_dir",my_dir);
+function my_dir(){
+    return{
+         //Properties of Custom Directives
+    }
+}
+        *******************
+Example_1
+
+    app.js
+
+    directives
+        attrType.js
+        classType.js
+        elemType.js
+
+
+    bower.json
+
+    index.html
+        *******************
+
+
+        ***********************
+Example_2
+    bower.json
+    app.js
+    index.html
+    templates (folder)
+        header.html
+    controllers (folder)
+        headerController.js
+
+    directives(folder)
+        header.js
+        **************************
+
+templates/header.html
+---------------------
+<div class="dropdown">
+    <button class="btn btn-primary" data-toggle="dropdown">
+        <span class="dropdown-caret">ClickMe</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>InBox</li>
+        <li>Home</li>
+        <li>Contact</li>
+        <li ng-click="logout()">Logout</li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
