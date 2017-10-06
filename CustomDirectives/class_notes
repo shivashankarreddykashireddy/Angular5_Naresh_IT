@@ -124,14 +124,41 @@ templates/header.html
 </div>
 
 
+headerController.js
+-------------------
+app.controller("headerController",headerController);
+function headerController($scope){
+    $scope.logout = function(){
+        alert("Logged Out Successfully !");
+    }
+}
 
 
+header.js
+---------
+app.directive("header",header);
+function header(){
+    return{
+        templateUrl:"templates/header.html",
+        controller:"headerController"
+    }
+}
 
+index.html
+----------
+<!DOCTYPE html>
+<html ng-app="app">
+    <header></header>
 
+    <script src="bower_components/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-
-
-
+    <script src="app.js"></script>
+    <script src="controllers/headerController.js">
+    <script src="directives/header.js"></script>
+</html>
 
 
 
