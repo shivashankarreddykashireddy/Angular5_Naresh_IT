@@ -1,0 +1,114 @@
+1. bower
+
+2. Gulp
+
+3. karma
+
+
+bower:
+------
+    - bower is the automation tool used to download the dependencies to develop UI Application.
+
+    - bower is based on node js.
+
+installation of bower:
+---------------------
+> npm install -g bower
+[Note : automatically "bower@1.8.2" version installed]
+
+bower component
+---------------
+- "bower.json" file called as bower component
+
+{
+    "name":"nareshit",
+    "dependencies":{
+            "angular":"latest",
+            "bootstrap":"latest"
+    }
+}
+
+> bower install
+
+[Note : automatically "bower_components" will create in current path of project]
+
+
+Angular Framework path:
+-----------------------
+"bower_components / angular / angular.min.js"
+
+
+Bootstrap Path:
+---------------
+"bower_components/bootstrap/dist/css/bootstrap.min.css"
+
+
+jQuery path:
+------------
+"bower_components/jquery/dist/jquery.min.js"
+
+
+Uninstall the Dependencies Dynamically:
+--------------------------------------
+>bower uninstall bootstrap --save
+
+
+Install the Dependencies Dynamically:
+-------------------------------------
+>bower install bootstrap --save
+
+
+list of dependencies:
+---------------------
+>bower list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
