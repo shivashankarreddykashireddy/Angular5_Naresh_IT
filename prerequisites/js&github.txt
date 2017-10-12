@@ -336,14 +336,28 @@ file name : WebStorm-2017.2.4.exe
   (Checkout to AngularJS_11AM Branch)
 
 
-commit the changes from IDE to cloud repository
------------------------------------------------
+commit & push the changes from IDE to cloud repository
+------------------------------------------------------
 
 --> ctrl+k
 
 --> enter commit message
 
 --> commit & push
+
+
+pull the code from cloud repository:
+------------------------------------
+ -- > VCS
+
+ -- > Git
+
+ -- > Pull
+
+ -- > AngularJS_11AM (Select)
+
+ -- > Pull
+
 
 
 
