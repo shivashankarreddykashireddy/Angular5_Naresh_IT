@@ -230,6 +230,157 @@ steps to create the static angular application:
     3. ng-bind
 
 
+Dynamic Application:
+
+    - if view interacts with controller for dynamic data then such type of
+application called as Dynamic Application.
+
+
+Step 1:
+-------
+    download angular framework.
+
+
+Step 2:
+-------
+    load angular framework.
+
+
+Step 3:
+-------
+    declare the logical name of web application by using ng-app directive
+
+    Ex.
+        ng-app="app"
+
+
+Step 4:
+-------
+    declare the controller by using "ng-controller" directive.
+
+Ex.
+    <div ng-controller="ctrl">
+
+    </div>
+
+
+Step 5:
+-------
+    create the app instance.
+
+    <script>
+            var app = angular.module("app",[]);
+    </script>
+
+
+[Note : "app" object used to implement the controllers , services , single page applications
+        and filters,....]
+
+
+
+Step 6:
+    implement the controller.
+
+Declaring the variables in controller:
+--------------------------------------
+
+    we can declare the variables by using either $scope (or) $rootScope service.
+
+Ex.
+    $scope.var_one = "Welcome...!";
+
+Declaring the functions in controller:
+--------------------------------------
+Ex.
+    $scope.my_fun = function(){
+        return "Welcome...!";
+    }
+
+Declaring the JSON Objects in Controller:
+-----------------------------------------
+Ex.
+    $scope.obj = {"key1":"Hello_1"};
+
+
+Directives:
+-----------
+    - directives in angular js enhances the html capabilities.
+
+1. ng-app
+
+    - angular framework starts the execution from ng-app directive.
+
+    - this directive called as root directive.
+
+    - ng-app directive takes the logical name of web application.
+
+    - logical name of web application is optional for static applications.
+
+    - logical name of web application mandatory for dynamic applications.
+
+    - we can have only one "ng-app" directive per web application.
+
+    - executing the angular application forcefully without ng-app directive
+      called as "manual bootstrap".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

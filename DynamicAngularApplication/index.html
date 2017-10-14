@@ -1,0 +1,52 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <div ng-controller="ctrl">
+        <h1>{{data}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",function ($scope) {
+            $scope.data = "Data From MongoDB Soon...!";
+        });
+    </script>
+</html>-->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+    <h1>{{var_one}}</h1>
+    <h1>{{my_fun()}}</h1>
+    <h1>{{obj.key1}}</h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",function ($scope) {
+            $scope.var_one = "Welcome...!";
+            $scope.my_fun = function () {
+                return  $scope.var_one;
+            };
+            $scope.obj = {"key1":"Welcome...!"};
+        });
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
