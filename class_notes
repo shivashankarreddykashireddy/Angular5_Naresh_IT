@@ -103,6 +103,37 @@ variables:
         document.write("Welcome....!");
 
 
+Functions:
+----------
+    - set of statements called as function.
+
+    - functions are used to write the business logic.
+
+    - by using functions we can reuse the business logic.
+
+    - we have two types of functions
+
+        1. Named functions
+
+        2. anonymous functions
+
+Named functions
+---------------
+    - the functions with the name called as Named functions.
+
+Syntax.
+-------
+    function function_name(){
+        //Logic
+    }
+
+    function_name();
+
+
+
+
+
+
 
 
 

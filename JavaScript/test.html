@@ -21,7 +21,7 @@
 
 
 
-<script>
+<!--<script>
         let data = 100;
 
         if(true){
@@ -29,7 +29,82 @@
         }
 
         document.write(data);
+</script>-->
+
+
+<!--<script>
+    function fun_one() {
+        return "Welcome....!";
+    }
+
+    document.write(fun_one);
+    document.write(fun_one());
+</script>-->
+
+<!--<script>
+    function fun_one() {
+        return fun_two();
+    }
+    
+    function fun_two() {
+        return "Welcome...!";
+    }
+
+    document.write(fun_one());
+</script>-->
+
+
+<!--<script>
+    function fun_one() {
+        return fun_two;
+    }
+    
+    function fun_two() {
+        return "Welcome...!";
+    }
+
+    document.write(fun_one()());
+</script>-->
+
+<script>
+    function fun_one(arg1,arg2,arg3) {
+        document.write(arg1()+"..."+arg2()+"..."+arg3());
+    }
+    function fun_two() {
+        return "AngularJS";
+    }
+    function fun_three() {
+        return "NodeJS";
+    }
+    function fun_four() {
+        return "MongoDB";
+    }
+    fun_one(fun_two,fun_three,fun_four);
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
