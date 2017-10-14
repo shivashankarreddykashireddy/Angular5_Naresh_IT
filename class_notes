@@ -129,6 +129,75 @@ Syntax.
 
     function_name();
 
+Anonymous functions:
+--------------------
+    - the functions without name called as anonymous functions.
+
+Syntax.
+        var fun_one = function(){
+            //logic
+        }
+
+        fun_one()
+
+JSON
+----
+    - JSON Stands for Java Script Object Notation.
+
+    - JSON used to transfer the data over the network.
+
+    - JSON is ligth weigth compared to XML.
+
+Syntax.
+    Objects - {}
+
+    Arrays  - []
+
+    data    - "key&value"
+
+
+classes:
+--------
+    - collection of variables and functions called as class.
+
+    - we can create the classes by using "function" keyword.
+
+    - in class(function) "all members" should start with this keyword.
+
+    - we can create the objects by using "new" keyword.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

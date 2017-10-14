@@ -66,6 +66,7 @@
     document.write(fun_one()());
 </script>-->
 
+<!--
 <script>
     function fun_one(arg1,arg2,arg3) {
         document.write(arg1()+"..."+arg2()+"..."+arg3());
@@ -81,6 +82,228 @@
     }
     fun_one(fun_two,fun_three,fun_four);
 </script>
+-->
+
+
+
+<!--<script>
+    var fun_one = function () {
+        return "Welcome...!";
+    };
+
+    document.write(fun_one);
+    document.write(fun_one());
+</script>-->
+<!--
+
+<script>
+    var fun_one = function () {
+      return function () {
+        return "Welcome...!";
+      };
+    };
+
+    console.log(fun_one()());
+</script>
+-->
+
+
+
+
+<!--<script>
+    var fun_one = function (arg1,arg2,arg3) {
+        console.log(arg1());
+        console.log(arg2());
+        console.log(arg3());
+    };
+
+    fun_one(function () {
+       return "Good Morning !";
+    },function () {
+        return "Good Afternoon !";
+    },function () {
+        return "Good Bye !";
+    });
+</script>-->
+
+
+
+<!--<script>
+    for(var i=0;i<10;i++){
+        console.log(i);
+    }
+</script>-->
+
+<!--<script>
+    var array=[];
+
+    for(var i=0;i<10;i++){
+        array.push(i);
+    }
+
+    console.log(array.length);
+
+    for(var i=0;i<array.length;i++){
+        console.log(array[i]);
+    }
+
+
+</script>-->
+
+
+<!--<script>
+    var array=[];
+
+    for (var i=0;i<5;i++){
+        array.push(function () {
+           return i;
+        });
+    }
+
+    for(var i=0;i<array.length;i++){
+        console.log(array[i]());
+    }
+</script>-->
+
+
+
+
+
+<!--
+<script>
+
+    var data = {
+        "login":login,
+        "logout":logout
+    };
+    
+    function login() {
+        return "Login Module...!";
+    }
+
+    function logout() {
+        return "Logout Module...!";
+    }
+
+    console.log(data.login()+"..."+data.logout());
+
+</script>
+-->
+
+
+
+<!--
+<script>
+    var data = {
+                "records":[
+                    {"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"},
+                    {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"},
+                    {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"},
+                    {"Name":"Around the Horn","City":"London","Country":"UK"},
+                    {"Name":"B's Beverages","City":"London","Country":"UK"},
+                    {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"},
+                    {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"},
+                    {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"},
+                    {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"},
+                    {"Name":"Bon app'","City":"Marseille","Country":"France"},
+                    {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"},
+                    {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"},
+                    {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"},
+                    {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"},
+                    {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"}
+                ]
+    };
+
+    var result="";
+    for(var i=0;i<data.records.length;i++){
+        var obj = data.records[i];
+        var __name = obj.Name;
+        var __city = obj.City;
+        var __country = obj.Country;
+        result+=__name+"...."+__city+"..."+__country+"<br>";
+    }
+    document.write(result);
+</script>
+-->
+
+<!--
+
+<script>
+    function class_one() {
+        this.data="Data From DataBase Soon...!";
+
+        this.my_fun = function () {
+            return this.data;
+        };
+    }
+
+    console.log(new class_one().my_fun());
+</script>
+-->
+
+<script>
+    function class_one() {
+        this.fun_one = function () {
+            return new class_two();
+        };
+    };
+    function class_two() {
+        this.fun_one = function () {
+            return{
+                "key_one":my_fun
+            }
+        };
+        function my_fun() {
+            return "Welcome...!";
+        }
+    };
+    console.log(new class_one().fun_one().fun_one().key_one());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
