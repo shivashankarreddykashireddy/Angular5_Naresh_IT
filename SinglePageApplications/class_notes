@@ -116,8 +116,6 @@ Ex.                 page_one.html
                     page_two
 
 
-
-
 config.js
 ---------
 app.config(function($routeProvider){
@@ -128,4 +126,149 @@ app.config(function($routeProvider){
                   .otherwise("/page_one" , {templateUrl:"templates/page_one.html" ,
                                 controller:"page_one"});
 });
+
+
+
+Step 6:
+-------
+    create the source template
+
+index.html
+----------
+<a href="page_one"><b>Page_One</b></a>
+<a href="page_two"><b>Page_Two</b></a>
+<div ng-view></div>
+
+
+Single Page Applications by using ui.router module:
+---------------------------------------------------
+
+1. Download "ui.router" module
+
+[Note : "angular-ui-router" is the bower key used to download the ui.router
+        dependency]
+
+
+2. Add the "ui.router" dependency.
+
+app.js
+------
+var app = angular.module("app",["ui.router"]);
+
+
+3. create the templates
+
+-------------
+templates
+    page_one.html
+    page_two.html
+--------------
+
+4. create the controllers
+
+----------------
+controllers
+    page_one.js
+    page_two.js
+-----------------
+
+5. implement the mapping
+
+config.js
+---------
+app.config(function($stateProvider,$urlRouterProvider){
+    $stateProvider.state("page_one" , {
+            url:"/page_one",
+            templateUrl:"templates/page_one.html",
+            controller:"page_one"
+    })
+    .state("page_two" , {
+                url:"/page_two",
+                templateUrl:"templates/page_two.html",
+                controller:"page_two"
+    });
+    $urlRouterProvider.otherwise("/page_one");
+});
+
+Step 6:
+-------
+    create the source template.
+
+index.html
+----------
+<a ui-sref="page_one">Page_One</a>
+<a ui-sref="page_two">Page_Two</a>
+<div ui-view></div>
+
+NodeJS
+------
+    - NodeJS is the Server Side Scripting language.
+
+    - We can develop Node Applications by using JavaScript.
+
+    - By using NodeJS, we can develop both http & tcp servers.
+
+Modules in NodeJS:
+-----------------
+
+1. express
+    - we can develop Rest API.
+
+2. mysql
+    - we can interact with the mysql database.
+
+3. mongodb
+    - we can interact with mongodb.
+
+4. body-parser
+    - set the MIME Type.
+
+5. http
+    - develop the http servers.
+
+6. fs
+    - used to interact with the flat files.
+
+[Note : we can download all the modules by using "package.json" file]
+[ Note : we can run "package.json"  file by using "npm install" command]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

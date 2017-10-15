@@ -325,13 +325,40 @@ Directives:
 
 
 
+MongoDB:
+--------
+    - MongoDB Supports JSON Objects.
 
+    - MongoDB Follows client server Architecture.
 
+    - MongoDB is ligth weigth compared to other databases.
 
+MongoDB Queries:
+----------------
+Start the Server:
+> mongod
 
+[Note : by default mongo server run on "27017" port no with "mongodb" protocol ]
 
+connect to server
+-----------------
+> mongo
 
+create and switch to database:
+------------------------------
+> use workshop;
 
+create the collection in database:
+----------------------------------
+> db.createCollection("products");
+
+insert the JSON Data:
+---------------------
+> db.products.insert({'p_id':111,'p_name':'p_one','p_cost':10000});
+
+Query the Collection:
+---------------------
+> db.products.find();
 
 
 
