@@ -135,6 +135,93 @@ Predefined Services:
         --
         --
 
+Ex_1:
+-----
+app.service("my_service",function($http){
+    this.getData = function(){
+        return $http.get("https://www.w3schools.com/angular/customers.php")
+                .then(function(posRes){
+            return posRes;
+        },function(errRes){
+            return errRes;
+        });
+    };
+});
+
+app.controller("ctrl",function($scope,my_service){
+    my_service.getData().then(function(res){
+        $scope.result = res;
+    });
+});
+
+
+Ex_2:
+    POST URL : http://test-routes.herokuapp.com/test/uppercase
+
+Ex_3:
+-----
+    URL_1 : http://test-routes.herokuapp.com/test/hello
+    URL_2 : https://www.w3schools.com/angular/customers.php
+
+$q:
+---
+    - $q is the predefined service in angular js.
+
+    - $q used to overcome the data redundancy.
+
+    app.controller("ctrl",function ($scope,my_service,$q) {
+             $q.all([my_service.fun_one(), my_service.fun_two()])
+                                .then(function (res) {
+                $scope.var_one = res[0];
+                $scope.var_two = res[1];
+            });
+    });
+
+    - $q used to make the asynchronous calls.
+
+                var deffered_two = $q.defer();
+                this.fun_two = function () {
+                    return $http.get("https://www.w3schools.com/angular/customers.php")
+                            .then(function (posRes) {
+                        deffered_two.resolve(posRes);
+                        return deffered_two.promise;
+                    },function (errRes) {
+                        deffered_two.reject(errRes);
+                        return deffered_two.promise;
+                    });
+                    };
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

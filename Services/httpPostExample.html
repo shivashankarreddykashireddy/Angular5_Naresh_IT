@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{result}}</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+       var app = angular.module("app",[]);
+
+       app.service("my_service",function ($http) {
+            this.getData = function () {
+                return $http.post("http://test-routes.herokuapp.com/test/uppercase",{'message':'angular5'}).then(function (posRes) {
+                   return posRes;
+                },function (errRes) {
+                    return errRes;
+                });
+            };
+       });
+
+
+       app.controller("ctrl",function ($scope,my_service) {
+           my_service.getData().then(function (res) {
+                $scope.result = res;
+           });
+       });
+
+    </script>
+</html>
