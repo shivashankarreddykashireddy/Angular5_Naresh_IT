@@ -1,0 +1,211 @@
+1. What is AngularJS ??
+
+2. Advantages of AngularJS ??
+
+3. Disadvantages Of AngularJS ??
+
+4. Key Features Of AngularJS ??
+
+5. Comparision Of AngularJS - Angular4
+
+                  AngularJS - NodeJS
+
+                  AngularJS - reactJS
+
+What is AngularJS ??
+--------------------
+    - AngularJS is the Framework.
+
+    - AngularJS is the Client Side JavaScript Framework.
+
+    - AngularJS Follows MVC Design pattern.
+        M - Model
+        Ex.
+               var data = "Data from DataBase Soon...!";
+        [where "data" variable called as model in angular js]
+
+        V - View
+            - HTML / HTML5/JADE As Recomended as View in AngularJS
+
+        C - Controller
+        Ex.
+            var fun_one = function(){
+                return "data from database soon...!";
+            }
+
+        [Note : where "fun_one" called as controller in
+                angular js]
+
+        - AngularJS released by google.
+
+
+Advantages of AngularJS
+-----------------------
+1. AngularJS Supports Modules.
+
+[Module : collection of predefined classes implementation]
+
+1. ngAnimate
+    - this module used to develop the Animations.
+
+
+2. ngMessages
+    - this module used to handle to the form validations.
+
+
+3. ngStorage
+    - this module used to perform the manipulations on
+    client side storages.
+
+    - we have two types of storages.
+
+        1. local storage
+
+        2. session storage
+
+
+4. ngRoute
+    - this module used to implement the routing in
+single page application.
+
+    - ngRoute module is the default module.
+
+    - ngRoute module is deprecated module.
+
+    - now a days no body using ngRoute module to implement
+      Single Page Applications.
+
+
+5. ui.router
+
+    - ui.router module is the 3rd party module.
+
+    - ui.router module used to implement the routing
+      in single page applications.
+
+    - ui.router module have so many advantages compared
+      to ngRoute module.
+
+    - now a days all most all the projects they are using
+      ui.router module to implement single page applications.
+
+
+Ex_1:
+    develop the angular application by using following
+features.
+    - Animations Support
+    - Storages Support
+    - Routing Support (ui.router)
+    - Validations Support
+
+index.html
+----------
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",["ngAnimate",
+                                        "ngStorage",
+                                        "ui.router",
+                                        "ngMessage"]);
+    </script>
+</html>
+
+
+2. by using angular js we can manipulate the DOM.
+
+   DOM Stands for Document Object Model
+
+Ex.
+    copy the data from "one div" to "another div" by using
+HTML & JavaScript.
+
+index.html
+----------
+<!DOCTYPE html>
+<html>
+    <div id="div_one">Hello</div>
+    <div id="div_two"></div>
+    <script>
+        document.getElementById("div_two").innerHTML =
+        document.getElementById("div_one").value;
+    </script>
+</html>
+
+[Note : as a javascript developer we must dependent on
+        script to manipulate the DOM]
+
+
+
+Ex.
+    copy the data from "one div" to "another div" by
+using angular js
+<!DOCTYPE html>
+<html ng-app>
+    <div ng-model="div_one">Hello</div>
+    <div ng-bind="div_one"></div>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+- in the above application we have following directives
+
+    1. ng-app
+    2. ng-model
+    3. ng-bind
+
+- angular framework starts the execution from ng-app directive.
+
+- when ever framework encountered ng-model directive automatically
+  object will be created in heap memory with application data.
+
+- ng-bind directive binds the application data(model data) to view.
+
+[Note : we can manipulate the DOM Elements without depending
+        on JavaScript.
+
+        As a angular developer we can manipulate the DOM
+        by using Angular Directives]
+
+3. AngularJS Supports Two Way Data Binding.
+
+    - Automatic Data Syncronization between model and view
+      with the supervision of controller called as
+      Two Way Data Binding.
+
+
+
+
+
+
+    - in the above diagram we have following server calls.
+
+1. http get request
+
+    - this request used to fetch the data from database.
+
+
+2. http delete request
+
+    - this request used to delete the perticular resource
+from database.
+
+
+3. AJAX Call
+
+    - this request used to sync the data between view
+      and database.
+
+[note : as a programming languages developer we must make
+        above all server calls to meet application
+        requirement]
+
+[note : as a angular developer we can make only two server
+        calls to meet application requirement because of
+        two way data binding.]
+
+
+[note : two way data binding reduces the burden on the server]
+
+
+
