@@ -114,7 +114,6 @@ index.html
 
 
 2. by using angular js we can manipulate the DOM.
-
    DOM Stands for Document Object Model
 
 Ex.
@@ -176,8 +175,6 @@ using angular js
 
 
 
-
-
     - in the above diagram we have following server calls.
 
 1. http get request
@@ -206,6 +203,202 @@ from database.
 
 
 [note : two way data binding reduces the burden on the server]
+
+
+4. AngularJS Reduces Burden on the Server.
+
+    - As a Angular Developer we can implement the Business
+Components at client side automatically we can reduce the
+burden on the server.
+
+5. Open Source Code
+    - We can customize the framework accroding to application
+    requirement.
+
+    - we can add the features to framework.
+    - we can update/delete the features from framework.
+
+Disadvantages of AngularJS
+--------------------------
+    - we are missing the secuirity because we are implementing
+business components at client side.
+
+    - no coding standards given by vendor , so understanding
+of angular applications are difficult.
+
+    - as a angular developer we must enable the javascript
+in browser.
+
+
+key features of angular js
+--------------------------
+
+1. directives
+
+    - directives in angular enhances the HTML Capabilities.
+
+    - we have two types of directives.
+
+        1. predefined directives
+
+        2. custom directives
+
+    predefined directives
+    ---------------------
+        - The Directives given by the framework called as
+    Predefined Directives.
+
+    Ex.
+        ng-app
+
+        ng-model
+
+        ng-bind
+
+    custom directives:
+    ------------------
+        - The Directives developed by developer based on
+    application requirement called as custom directive.
+
+
+    Ex.
+        my_dir
+
+
+2. services
+    - services in angular js used to share the common
+    business logic to multiple controllers.
+
+    - by using services we can reuse the business logic.
+
+    - injecting the service to controllers called as
+      dependency injection.
+
+    - we have two types of services.
+
+        1. predefined services
+
+        2. custom services
+
+predefined services
+-------------------
+    - the services given by the framework called as
+predefined services
+
+Ex.
+    1. $http
+
+    2. $q
+
+
+custom service:
+---------------
+    - the services developed by user based on application
+requirement called as custom service.
+
+Ex.
+    my_service
+
+
+
+3. filters
+
+    - filters are used to format the data accroding to
+application requirement.
+
+    - we have two types of filters.
+
+        1. predefined filters
+
+        2. custom filters
+
+predefined filters
+------------------
+    - The Filters given by the angular framework called
+as Predefined Filters.
+
+
+1. orderBy
+
+2. limitTO
+
+
+custom filters:
+---------------
+    - The Filters developed by developer based on application
+requirement called as custom filters.
+
+Ex.
+    my_filter
+
+
+4. single page applications
+    - loading one template to another template without refreshing
+the whole web page called as single page application.
+
+
+5. routing
+    - loading one template to another template in single page
+application called as routing.
+
+    - we can implement the routing in single page application
+by using following modules.
+
+    1. ngRoute
+    2. ui.router
+
+
+Comparision of AngularJS with Angular4:
+---------------------------------------
+    - The Vendor for the AngularJS is Google.
+      The Vendor for Angular4 is Google and Microsoft.
+
+
+    - By using AngularJS, we can develop web applications
+      By using Angular4 we can develop web and mobile applications.
+
+
+    - we can develop angular js applications by using javascript.
+      we can develop angular4 applications by using TypeScript.
+
+    - AngularJS is Controller Based Applications.
+      Angular4 is Component Based Applications.
+
+    - AngularJS Have Poor Performance compared to Angular4.
+      Angular4 have 5X More Performance Compared to AngularJS
+
+
+Comparision Of AngularJS With NodeJS:
+-------------------------------------
+
+    - AngularJS is the client side scripting language.
+      NodeJS is the server side scripting language.
+
+
+    - We Can develop angular js applications by using
+      JavaScript.
+
+      We can Develop Node Applications By Using JavaScript.
+
+
+    - by using AngularJS, we can develop web applications.
+      by using NodeJS, we can develop both http & tcp servers.
+
+
+Comparision Of AngularJS With ReactJS:
+-------------------------------------
+    - AngularJS is the JavaScript MVC Framework.
+      reactJS is the JavaScript library.
+
+
+    - while working with data structures angular shows poor
+      performance.
+
+      while working with data structures react gives more
+      performance.
+
+
+
 
 
 
