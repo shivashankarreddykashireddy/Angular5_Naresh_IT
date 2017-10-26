@@ -1,0 +1,652 @@
+JavaScript:
+-----------
+	- JavaScript is the Scripting Language.
+
+	- By Using javascript we can make HTML'S as Dynamic Interactive Web pages.
+
+	- we can include the JavaScript in template by using <script></script> tag.
+
+
+Variables in JavaScript:
+------------------------
+	- variables in javascript used to store the data.
+
+	- by using variables we can store all categories of data.
+
+	Ex.
+		primitive data.
+
+		user defined data.
+
+	- we can declare the variables by using "var" keyword.
+
+	Ex.
+		var data = "data from database soon...!";
+		var data = 100;
+		var data = true;
+		var data = {'sub_one':'AngularJS'};
+		var data = new Employee();
+	
+
+Displaying the data on browser console:
+---------------------------------------
+console.log("Welcome...!");
+
+
+Displaying the Data on webpage:
+-------------------------------
+document.write("Welcome....!");
+
+Getting the Refrences of HTML Elements
+---------------------------------------
+
+<h1 id="my_h1"></h1>
+var element = document.getElementById("my_h1");
+
+
+
+
+Q1: what is global polluting in javascript ?? 
+    and what is remedy for issue??
+
+
+
+functions:
+----------
+	- functions are block of statements.
+
+	- by using functions we can reuse the business logic.
+
+	- we have two types of functions
+
+		1. named functions
+		2. anonymous functions
+
+
+named functions
+---------------
+	- the functions with name called as named functions.
+
+Syntax.
+	//function defination
+	function fun_name(){
+	   //Business Logic
+	}
+	
+	//calling the function
+	fun_name();
+
+
+anonymous functions:
+-------------------
+	- the functions with out name called as anonymous functions.
+
+	- anonymous functions are more secured compared to named functions.
+
+	- anonymous functions utilizes the heap memory efficiently.
+
+
+Syntax.
+	var fun_one = function(){
+		//Business logic
+	}
+
+
+	
+for loop:
+---------
+	- for loop used to iterate the elements from an array.
+
+
+
+JSON:
+-----
+	- JSON Stands for Java Script Object Notation.
+
+	- We Can Transfer the Data Over the Network by using following formats
+
+		1. XML
+
+		2. JSON
+
+	- JSON is ligth weigth compared to XML.
+
+	- JSON Format is Network Friendly Format.
+
+
+Syntax.
+
+	Objects  --- {  }
+
+	Arrays   --- [  ]
+
+	data     --- "key & value"
+
+
+[Note : key & value separated  with " : "]
+[Note : each "key&value" pair separated by using ","]
+
+
+classes in javascript
+---------------------
+	- collection of variables and functions called as class.
+
+	- we can create the classes by using "function" keyword.
+
+	- in class all members should start with "this" keyword.
+
+	- we can create the object to the class by using "new" keyword.
+
+	- we have two types of classes.
+		
+		1. Named Classes
+
+		2. Anonymous Classes
+
+
+Syntax.
+	function class_name(){
+		//class members with this keyword.
+	}	
+
+
+	var obj = new class_name();
+
+
+
+
+
+				GitHub
+				------
+
+	- GitHub is the Open Source Repository maintained by Google.
+
+	- GitHub Repository used to collabrate the work flow in projects.
+
+	- "Git" is the tool used to interact with the GitHub.
+
+Installation of Git:
+--------------------
+website   : https://git-scm.com/download/win
+
+file name : Git-2.14.2.2-32-bit.exe
+
+GitHub Operations:
+------------------
+1. create the Repository locally.
+
+2. add the user credentials to the repository
+
+3. create the files to the repository
+
+4. commit the changes
+
+5. create the branch
+
+6. merge the branches
+
+7. Integration of GitHub to IDE
+	Ecilipse
+	VisualStudio
+	WebStrom
+
+8. commit the changes to cloud repository
+
+9. push the code to cloud repository
+
+10. pull the code from cloud repository
+
+1. create the Repository locally.
+---------------------------------
+
+- create the directory (folder)
+
+	Ex.
+		demo
+
+- launch the gitbash here terminal on rigth click of demo folder
+
+- execute the following command
+
+	> git init
+
+[Note : automatically "demo" folder converted as local repository]
+
+2. add the user credentials to the repository
+---------------------------------------------
+
+User Name:
+----------
+> git config --global user.name "NareshIT"
+
+User Email:
+-----------
+> git config --global user.email "hr@nareshit.in"
+
+3. create the files to the repository
+-------------------------------------
+> touch sample.txt
+
+[Note : automatically "sample.txt" file created in repository with "untracked" mode]
+
+> git status
+	- knowing the status of files in repository
+
+
+4. commit the changes 
+---------------------
+
+> git add sample.txt
+
+> git commit
+
+> press "i"  [Insert Mode Enabled]
+
+> type "initial commit"
+
+> press "ESC"
+
+> type ":wq"
+
+> press "Enter"
+
+
+From 2nd commit onwards follow the below commands
+--------------------------------------------------
+> git add sample.txt
+> git commit -m "Code Added"
+
+>git log
+	- used to know the total number of commits in repository.
+
+5. create the branch
+---------------------
+> git branch AngularJS_11AM
+
+> git checkout AngularJS_11AM
+
+[Note: by default child branches containes "files from master branch"]
+
+
+6. merge the branches
+---------------------
+
+> git checkout master
+
+> git merge AngularJS_11AM
+
+
+7. Integration of GitHub to IDE
+-------------------------------
+
+1. download and install NodeJS
+
+website : https://nodejs.org/en/download/
+file name : node-v6.11.4-x64.msi
+
+2. download and install Git
+
+website : https://git-scm.com/downloads
+file name : Git-2.14.2.2-64-bit.exe
+
+
+3. create the account with the GitHub
+	website : https://github.com/join
+
+
+4. download WebStrom IDE
+
+website : https://www.jetbrains.com/webstorm/download/#section=windows
+file name : WebStorm-2017.2.4.exe
+
+5. checkout the code from the cloud repository 
+	URL : https://github.com/ajsnaresh/AJS_Classes.git
+
+
+
+ - Open the WebStrom IDE (Run WebStrom IDE)
+
+ - Checkout from Version Control
+
+ - GitHub
+
+ - click the create API Token
+
+ - Enter GitHub Credentials
+
+	Login	 : xxxxxxxxxxxx
+	
+	password : xxxxxxxxxxx	
+
+ - login (2 times)
+
+ - Enter the Repository Details
+	
+	Git Repository URL : https://github.com/ajsnaresh/AJS_Classes.git
+
+	Root Directory     : D:/
+
+	Parent Directory   : AJS_Classes
+
+ - clone
+
+ - yes
+
+ - by defualt we are in master branch 
+  (Checkout to AngularJS_11AM Branch)
+
+
+commit & push the changes from IDE to cloud repository
+------------------------------------------------------
+
+--> ctrl+k
+
+--> enter commit message
+
+--> commit & push
+
+
+pull the code from cloud repository:
+------------------------------------
+ -- > VCS
+
+ -- > Git
+
+ -- > Pull
+
+ -- > AngularJS_11AM (Select)
+
+ -- > Pull
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
