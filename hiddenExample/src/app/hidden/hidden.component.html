@@ -1,6 +1,0 @@
-<ul *ngFor="let x of data;let first=first;let last=last">
-  {{x | json}}
-
-  <button [hidden]="!first" (click)="clickMe(x)">First</button>
-  <button [hidden]="!last" (click)="clickMe(x)">Last</button>
-</ul>

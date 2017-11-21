@@ -1,7 +1,0 @@
-ngNonBindable:
-    - this directive used to restrict the binding functionality
-      of expressions.
-
-Syntax.
--------
-<h1 ngNonBindable>{{variable}}</h1>
