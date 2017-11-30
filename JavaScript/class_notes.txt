@@ -1,0 +1,132 @@
+JavaScript:
+-----------
+    - JavaScript is the scripting language.
+
+    - JavaScript used to make the HTML Pages as Dynamic Interactive web pages.
+
+    - we can display the data on browser console by using "console.log()"
+
+    - we can display the data on web page by using "document.write()"
+
+variables:
+----------
+    - variables are used to store the data.
+
+    - variables are used to store all categories of data.
+
+        Ex.
+            string
+            boolean
+            integer
+            json
+            objects
+                --
+                --
+                --
+
+    - we can define the variables by using "var" keyword.
+
+Ex_1:
+<script>
+    var sub_one = "AngularJS";
+    var sub_two = "NodeJS";
+    var sub_three = "MongoDB";
+    //display the data on browser console
+    console.log(sub_one+"<==>"+sub_two+"<==>"+sub_three);
+    //display the data on webpage
+    document.write(sub_one+"<==>"+sub_two+"<==>"+sub_three);
+</script>
+
+Ex_2:
+    <h1 id="first_h1"></h1>
+    <h1 id="second_h1"></h1>
+    <h1 id="third_h1"></h1>
+    <script>
+        document.getElementById("first_h1").innerHTML = "Angular5";
+        document.getElementById("second_h1").innerHTML = "NodeJS";
+        document.getElementById("third_h1").innerHTML = "MySQL";
+    </script>
+
+Ex_3:
+    <script>
+        //global variable
+        //var data = 100;
+        let data = 100;
+        if(true){
+            //local variable
+            //var data = 200;
+            let data = 200;
+        }
+
+        //access the global variable
+        document.write(data);
+    </script>
+[Note : "local scope changes" effecting the "global scope members" called as global
+        polluting issue]
+
+[Note : "let" is the keyword introduced in ECMA5 standards used to overcome the
+        global polluting issue in javascript]
+
+
+functions in javascript:
+-----------------------
+    - set of particular "business logic" called as function.
+
+    - functions are used to reuse the business logic.
+
+    - we have two types of functions
+
+            1. Named JavaScript Functions
+            2. Anonymous JavaScript Functions
+
+
+Named JavaScript Functions
+--------------------------
+    - The Function with the name called as Named JavaScript Function.
+
+    - we can define the functions with the help of "function" keyword.
+
+
+Syntax.
+    //defination
+    function function_name(){
+        //Business Logic
+    }
+
+    //call the function
+    function_name();
+
+Ex_1:
+    function fun_one(){
+        return "Welcome...!";
+    }
+    console.log( fun_one );   //function defination
+    console.log( fun_one() );  //Welcome...!
+
+Ex_2:
+    function fun_one(){
+        return fun_two;
+    }
+    function fun_two(){
+        return "Welcome...!";
+    }
+    var def = fun_one();
+    console.log( def() );   //Welcome...!
+
+
+Ex_3:
+    <script>
+        function fun_one(arg1,arg2,arg3){
+            document.write( arg1()+"<==>"+arg2()+"<==>"+arg3() );
+        }
+        function fun_two(){
+            return "AngularJS";
+        }
+        function fun_three(){
+            return "NodeJS";
+        }
+        function fun_four(){
+            return "MongoDB";
+        }
+        fun_one(fun_two,fun_three,fun_four);
+    </script>
