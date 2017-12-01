@@ -130,3 +130,160 @@ Ex_3:
         }
         fun_one(fun_two,fun_three,fun_four);
     </script>
+
+
+Anonymous Function:
+-------------------
+    - The Function with out name called as anonymous function.
+    - anonymous functions are more secured compared to named functions.
+    - anonymous functions utilizes the heap memory efficiently.
+
+Syntax.
+    //function defination
+    var fun_one = function(){
+        //Business Logic
+    }
+
+    //function calling
+    fun_one()
+
+Ex_1:
+    <script>
+        var fun_one = function(){
+            return "Welcome...!";
+        }
+        console.log( fun_one() );   //Welcome...!
+    </script>
+
+
+Ex_2:
+    <script>
+        var fun_one = function(){
+            return function(){
+                 return "Welcome...!";
+            }
+        }
+        console.log( fun_one()() ); //Welcome...!
+    </script>
+
+
+Ex_3:
+    pass the anonymous functions definations as arguments to another anonymous function.
+
+var fun_one = function(arg1,arg2,arg3){
+    document.write ( arg1()+"<==>"+arg2()+"<==>"+arg3() );
+}
+
+fun_one(function(){ return "AngularJS" } ,
+        function(){ return "NodeJS" } ,
+        function(){ return "MongoDB" });
+
+
+Ex_4:
+    iterate the array by using for loop.
+<script>
+    let array = [10,20,30,40,50];
+    for(let i=0;i<array.length;i++){
+        document.write(array[i]);
+    }
+</script>
+
+
+Ex_5:
+    push the data to array (0 - 9).
+
+<script>
+    var array = [];
+    for(var i=0 ;i<10;i++){
+        //array.push(i);
+        array.unshift(i);
+    }
+    console.log(array.length);   //10
+    for(var i=0;i<array.length;i++){
+        console.log(array[i]);
+    }
+</script>
+
+
+Ex_6:
+    push the anonymous functions to array.
+
+<script>
+    var array = [];
+    for(var i=0;i<5;i++){
+        array.push ( function(){ return i; } );
+    }
+    for(var i=0;i<array.length;i++){
+        document.write ( array[i]() );
+    }
+</script>
+
+
+json:
+-----
+    - json stands for java script object notation.
+
+    - we can carry the data over the network by using following formats.
+
+            1. XML
+            2. JSON
+
+    - JSON is light weight compared to XML.
+
+    - JSON is network friendly format.
+
+    - parsing of json files are simple compared to XML Parsing
+
+Syntax.
+    Objects - { }
+    Arrays  - [ ]
+    data    - key & value
+
+Ex_1:
+    <script>
+        var data = {
+            "sub_one":"AngularJS",
+            "sub_two":"NodeJS",
+            "sub_three":"MongoDB"
+        };
+        console.log(data.sub_one+"..."+data.sub_two+"..."+data.sub_three);
+    </script>
+
+
+Ex_2:
+    <script>
+        var data = {
+            "login":login,
+            "logout":logout
+        };
+        function login(){
+            return "Welcome to login module !";
+        }
+        function logout(){
+            return "Welcome to logout module !";
+        }
+        console.log(data.login() ); //Welcome to login module !
+        console.log(data.logout() ); //Welcome to logout module !
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+<!--
+<script>
+    var fun_one = function () {
+        return "Welcome...!";
+    };
+
+    document.write(fun_one+"<br><br>");
+    document.write(fun_one());
+</script>-->
+
+<!--
+<script>
+    var fun_one = function () {
+        return function () {
+            return "Welcome...!";
+        };
+    };
+
+    document.write(fun_one()());
+</script>-->
+
+
+
+<!--<script>
+    var fun_one = function (arg1,arg2,arg3) {
+        document.write(arg1()+"<==>"+arg2()+"<==>"+arg3());
+    };
+
+    fun_one(function () {
+       return "AngularJS !";
+    },function () {
+        return "NodeJS !";
+    },function () {
+        return "MongoDB !";
+    });
+</script>-->
+
+<!--<script>
+    var array = [10,20,30,40,50];
+
+    for(var i=0;i<array.length;i++){
+        document.write(array[i]+"<br>");
+    }
+</script>-->
+
+
+
+
+<!--<script>
+    var array = [];
+
+    for (var i=0; i<10;i++){
+        //array.push(i);
+        array.unshift(i);
+    }
+
+    for (var i=0;i<array.length;i++){
+        document.write("<h1>"+array[i]+"</h1>");
+    }
+
+</script>-->
+
+
+<script>
+    var array = [];
+
+    for(var i = 0;i<5;i++){
+        array.push( function () {
+            return i;
+        });
+    }
+
+    for (var i=0; i<array.length;i++){
+        document.write("<h1>"+ array[i]() +"</h1>");
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+Services:
+---------
+    Services meant for sharing the common business logic to components.
+
+    we have two types of services
+
+            1. custom services
+
+            2. predefined services
+
+
+custom services
+---------------
+    - The Services Developed by developer based on application requirement called as custom services.
+
+    - Injectable is the predefined class used to create the custom services.
+
+    - Injectable class available in "@angular/core" package.
+
+    - in general all the services we will register in "app.module.ts" under providers array.
+------------------------
+src
+    app
+        first.ts
+-------------------------
+
+first.ts
+--------
+import {Injectable} from "@angular/core";
+@Injectable()
+export class FirstService{
+    getData(){
+        return {
+            "products":[
+                            {"p_id":111,"p_name":"p_one","p_cost":10000},
+                            {"p_id":222,"p_name":"p_two","p_cost":20000},
+                            {"p_id":333,"p_name":"p_three","p_cost":30000},
+                            {"p_id":444,"p_name":"p_four","p_cost":40000},
+                            {"p_id":555,"p_name":"p_five","p_cost":50000}
+            ]
+        }
+    }
+
+
+}
+
+
+
+first.component.ts
+------------------
+import {Component} from "@angular/core";
+import {FirstService} from "./first.ts";
+@Component({
+    selector:"cust-ser",
+    templateUrl:"./first.component.html"
+})
+export class FirstComponent{
+    data:any;
+    constructor(private firstService:FirstService){
+
+    }
+    ngOnInit(){
+        this.data = this.firstService.getData();
+    }
+}
+
+
+first.component.html
+--------------------
+<h1>{{data}}</h1>
+
+
+index.html
+----------
+<cust-ser></cust-ser>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
