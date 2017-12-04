@@ -1,0 +1,180 @@
+GitHub:
+-------
+    - GitHub is the Open Source Repository maintained by google.
+
+    - Repositories meant for collabrate the work flow in applications (projects).
+
+    - Git is the interface tool used to interact with the GitHub.
+
+GitHub Operations:
+------------------
+1. Installation Of Git.
+
+2. Creating the local repository
+
+3. add the user credentials to the repository
+    (user name & email)
+
+4. create the files to the repository
+
+5. commit the files to the repository
+
+6. status of files in repository
+
+7. create the branches
+
+8. merge the branches
+
+9. stash / un stash changes
+
+10. merge conflicts resolve
+
+11. patches in repository
+
+12. cherry pickup in repository
+
+13. integration of cloud repository to IDE
+
+        Visual Studio Code
+
+14. commit the changes to cloud repository
+
+15. push the changes to cloud repository
+
+16. pull the changes from cloud repository
+
+1. Installation Of Git.
+-----------------------
+website : https://git-scm.com/download/win
+file    : Git-2.15.1.2-64-bit.exe
+
+2. Creating the local repository
+--------------------------------
+    - create directory (folder)
+        Ex.
+               demo
+    - launch the "gitbash here" terminal on right click of demo folder
+    - execute the following command
+    > git init
+
+[Note : automatically "demo" folder converted as local repository]
+
+
+3. add the user credentials to the repository
+    (user name & email)
+
+> git config --global user.name "xxxxxxxx"
+                                    (unique name)
+> git config --global user.email "xxxxxxxx"
+                                    (email)
+
+
+4. create the files to the repository
+
+> touch sample.ts
+
+[Note : automatically "sample.ts" file will created in repository]
+[Note : "ts" stands for type script]
+[Note : by default the status of new files in repository is "unsaved / untracked" mode]
+[Note : "red" color labels indicating untracked files in repository]
+
+
+6. status of files in repository
+--------------------------------
+> git status
+
+5. commit the files to the repository
+-------------------------------------
+> git add sample.ts
+> git commit
+> press "enter"
+> press "i" (insert mode)
+> type "initial commit" message
+> press "ESC"
+> type ":wq" message
+> press "enter"
+
+from 2nd commit onwards:
+------------------------
+> git add sample.ts
+> git commit -m "custom message"
+
+know the commit log
+-------------------
+> git log
+
+7. create the branches
+-----------------------
+> git branch "Angular5"   (create)
+> git checkout Angular5   (navigating)
+
+[Note : automatically all the files from master branch available to child branches]
+
+8. merge the branches
+---------------------
+> git checkout master
+> git merge Angular5
+
+
+13. integration of cloud repository to IDE
+Step 1:
+		Download and install Git.
+website : https://git-scm.com/download/win	
+file    : Git-2.15.1.2-64-bit.exe  	
+
+Step 2:
+	Download and Install NodeJS
+website : https://nodejs.org/en/download/
+file    : node-v8.9.1-x64.msi
+
+Step 3:
+	Download and Install WebStrom IDE
+website : https://www.jetbrains.com/webstorm/	 download/#section=windows
+file    : Webstrom-2017.3.exe
+
+Step 4:
+	Checkout the Code from cloud repository
+URL : https://github.com/ajsnaresh/AJS_Classes.git
+Branch : Angular2
+
+Step 5:
+	Install the Automation tools like "Yarn", "Gulp" and "karma"
+> npm install -g yarn
+> npm install -g gulp
+> npm install -g karma
+
+
+GitHub Account
+Website : https://github.com/join
+[Note : authentication required to connect with cloud
+repository(email verification)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
