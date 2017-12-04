@@ -267,23 +267,80 @@ Ex_2:
     </script>
 
 
+Ex_3:
+----
+<script>
+    var data = {
+                    "products":[
+                                {"p_id":111,"p_name":"p_one","p_cost":10000},
+                                {"p_id":222,"p_name":"p_two","p_cost":20000},
+                                {"p_id":333,"p_name":"p_three","p_cost":30000},
+                                {"p_id":444,"p_name":"p_four","p_cost":40000},
+                                {"p_id":555,"p_name":"p_five","p_cost":50000}
+                    ]
+    }
+    console.log( data.products[0].p_id );   //111
+    console.log( data.products[4].p_cost );  //50000
+    var result="";
+    for(let i=0;i<data.products.length;i++){
+        let obj = data.products[i];
+        let __pid = obj.p_id;
+        let __pname = obj.p_name;
+        let __pcost = obj.p_cost;
+        result = result+__pid+"..."+__pname+"..."+__pcost;
+    }
+    document.write(result);
+</script>
 
 
+classes in javascript
+---------------------
+    - collection of variables and functions called as class.
+
+    - "function" keyword used to create the classes in javascript.
+
+    - in class all the members starts with "this" keyword.
+
+Syntax.
+
+    //define the class
+    function class_one(){
+        //Members starts with the "this" keyword.
+    }
+
+    //create the object
+    var obj = new class_one();
+
+Ex_1:
+    function class_one(){
+        this.sub_one = "AngularJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+        this.fun_one = function(){
+            return "Angular5 have 5X more performance compared to AngularJS";
+        }
+    }
+    let obj = new class_one();
+    console.log(obj.sub_one);  //AngularJS
+    console.log(obj.sub_two);  //NodeJS
+    console.log(obj.sub_three); //MongoDB
+    console.log(obj.fun_one()); //Angular5 have 5X more performance compared to AngularJS
 
 
+Ex_2:
+    function class_one(arg1,arg2,arg3){
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+        this.fun_one = function(){
+            return this.var_one+"<==>"+this.var_two+"<==>"+this.var_three;
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    let obj_1 = new class_one("AngularJS","NodeJS","MongoDB");
+    document.write(obj_1.fun_one());
+    let obj_2 = new class_one("Angular5","NodeJS","MongoDB");
+    document.write(obj_2.fun_one());
 
 
 

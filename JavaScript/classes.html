@@ -1,0 +1,40 @@
+<!--<script>
+    function class_one() {
+        this.sub_one = "AngularJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+
+        this.fun_one = function () {
+          return "Angular5 Have 5X more Performance Compared to AngularJS";
+        };
+    }
+
+    var obj = new class_one();
+
+    document.write(obj.fun_one()+"<br>");
+    document.write(obj.sub_one+"<br>");
+    document.write(obj.sub_two+"<br>");
+    document.write(obj.sub_three+"<br>");
+
+</script>
+-->
+
+
+
+
+
+
+<script>
+    function class_one(arg1,arg2,arg3) {
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+        this.fun_one = function () {
+            return this.var_one+"<==>"+this.var_two+"<==>"+this.var_three;
+        };
+    }
+    var obj_1 = new class_one("AngularJS","NodeJS","MongoDB");
+    var obj_2 = new class_one("Angular5","FireBase","MySQL");
+    document.write("<h1>"+obj_1.fun_one()+"</h1><br>");
+    document.write("<h1 style='color: red'>"+obj_2.fun_one()+"</h1>");
+</script>
