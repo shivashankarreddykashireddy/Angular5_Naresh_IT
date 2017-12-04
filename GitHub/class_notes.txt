@@ -150,6 +150,46 @@ Website : https://github.com/join
 repository(email verification)]
 
 
+    *************************
+=> Open the WebStrom IDE
+=> Checkout from version control
+=> GitHub
+=> click the "create API Token" Button
+=> enter the login details
+        email : github email
+        password : github password
+=> login (2 times)
+=> enter the repository details
+    Repository URL : https://github.com/ajsnaresh/AJS_Classes.git
+    parent directory : D:\
+    parent folder    : AJS_Classes
+=> clone
+=> switch to "Angular2" Branch from "master" branch
+    ********************************
+
+push the code to cloud repository
+---------------------------------
+> ctrl+k
+> enter the commit message
+> commit & push
+> push
+
+
+pull the code from cloud repository
+-----------------------------------
+> VCS
+> Git
+> Pull
+> Select Angular2
+> Pull
+> OK
+
+
+
+
+
+
+
 
 
 
