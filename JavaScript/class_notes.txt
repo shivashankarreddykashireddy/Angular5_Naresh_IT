@@ -344,3 +344,92 @@ Ex_2:
 
 
 
+Ex_3:
+    - create two classes
+        @class_one
+        @class_two
+
+    - class_one function returns class_two object.
+
+    - class_two function returns "welcome" message.
+
+<script>
+    function class_one(){
+        this.fun_one = function(){
+            return new class_two();
+        }
+    }
+    function class_two(){
+        this.fun_one = function(){
+            return "Welcome...!";
+        }
+    }
+    console.log ( new class_one().fun_one().fun_one() ); // Welcome...!
+</script>
+
+
+Ex_4:
+-----
+<script>
+    function class_one(){
+        this.fun_one = function(){
+            return new class_two();
+        }
+    }
+    function class_two(){
+        this.fun_one = function(){
+            return{
+                "login":login
+            }
+        }
+    }
+    function login(){
+        return "Welcome...!";
+    }
+    console.log ( new class_one().fun_one().fun_one().login() ); //Welcome...!
+
+</script>
+
+
+Ex_5:
+    function class_one(arg1,arg2,arg3){
+        this.fun_one = function(){
+            return arg1+"<==>"+arg2+"<==>"+arg3;
+        }
+    }
+    function class_two(){
+        this.fun_one = function(){
+            return{
+                "sub_one":sub_one
+            }
+        }
+    }
+    function sub_one(){
+        return "AngularJS";
+    }
+    function class_three(){
+        this.fun_one = function(){
+            return{
+                "sub_two":sub_two
+            }
+        }
+    }
+    function sub_two(){
+        return "NodeJS";
+    }
+    function class_four(){
+        this.fun_one = function(){
+            return{
+                "sub_three":sub_three
+            }
+        }
+    }
+    function sub_three(){
+        return "MongoDB";
+    }
+    console.log (  new class_one(
+                   new class_two().fun_one().sub_one(),
+                   new class_three().fun_one().sub_two(),
+                   new class_four().fun_one().sub_three() )
+                   .fun_one();
+                );

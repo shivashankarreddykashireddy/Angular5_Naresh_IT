@@ -24,7 +24,7 @@
 
 
 
-<script>
+<!--<script>
     function class_one(arg1,arg2,arg3) {
         this.var_one = arg1;
         this.var_two = arg2;
@@ -37,4 +37,110 @@
     var obj_2 = new class_one("Angular5","FireBase","MySQL");
     document.write("<h1>"+obj_1.fun_one()+"</h1><br>");
     document.write("<h1 style='color: red'>"+obj_2.fun_one()+"</h1>");
+</script>-->
+
+
+<!--<script>
+    function class_one() {
+        this.fun_one = function () {
+            return new class_two();
+        };
+    }
+    function class_two() {
+        this.fun_one = function () {
+            return "Welcome...!";
+        };
+    };
+    console.log(new class_one().fun_one().fun_one());
+</script>-->
+
+
+
+
+<!--<script>
+    function class_one() {
+        this.fun_one = function () {
+            return new class_two();
+        };
+    };
+    
+    function class_two() {
+        this.fun_one = function () {
+            return{
+                "login":login
+            }
+        };
+    };
+
+    function login() {
+        return "Welcome...!";
+    }
+
+    console.log( new class_one().fun_one().fun_one().login());
+</script>-->
+
+<script>
+    function class_one(arg1,arg2,arg3) {
+        this.fun_one = function () {
+            return arg1+"<==>"+arg2+"<==>"+arg3;
+        };
+    };
+    
+    function class_two() {
+        this.fun_one = function () {
+            return{
+                "sub_one":sub_one
+            }
+        };
+    };
+
+    function sub_one() {
+        return "AngularJS";
+    }
+
+    function class_three() {
+        this.fun_one = function () {
+            return{
+                "sub_two":sub_two
+            }
+        };
+    };
+
+    function sub_two() {
+        return "NodeJS";
+    }
+
+    function class_four() {
+        this.fun_one = function () {
+            return{
+                "sub_three":sub_three
+            }
+        };
+    };
+
+    function sub_three() {
+        return "MongoDB";
+    }
+
+    console.log( new class_one(
+        new class_two().fun_one().sub_one(),
+        new class_three().fun_one().sub_two(),
+        new class_four().fun_one().sub_three()
+    ).fun_one());
+
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
