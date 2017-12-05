@@ -1,0 +1,95 @@
+Introduction:
+-------------
+    1. What is AngularJS ?
+    2. Advantages Of AngularJS ??
+    3. Disadvantages Of AngularJS ??
+    4. key features of AngularJS ??
+    5. Comparision Of AngularJS / Angular2 / Angular4 / Angular5 ??
+                      AngularJS / NodeJS ??
+                      AngularJS / reactJS ??
+
+
+
+Angular:
+-------
+    - Angular is the platform introduced by google.
+    - Angular used to develop web applications as well as mobile applications.
+    - AngularJS / Angular1.x / Angular1.6.6 is a one of the flavour of Angular Platform.
+
+AngularJS:
+----------
+    - AngularJS is the framework under the Angular Platform.
+    - AngularJS is a javascript framework.
+    - AngularJS is a client side javascript framework.
+    - AngularJS follows MVC Design Pattern
+        M - Model
+            javascript variables called as Model
+        Ex.
+            let data = "Data From DataBase Soon...!";
+        [Note : where "data" variable called as Model]
+        V - View
+            HTML / HTML5 used as View
+
+        C - Controller
+            javascript functions called as controller.
+        Ex.
+            function ctrl(){
+                return "data from database soon...!";
+            }
+        [Note : where "ctrl" called as controller in angularjs]
+
+Advantages Of AngularJS
+-----------------------
+1. AngularJS Supports Modules (Predefined Modules & Custom Modules)
+[Module : collection of predefined functionalities called as Module]
+
+    1.ngAnimate
+            - this module used to develop the animations in angular applications.
+
+    2.ngStorage
+            - this module used to work with the storages.
+                    1. local storage
+                    2. session storage
+
+    3. ngMessages
+            - this module used to work with the form validations.
+
+    4. ngRoute
+            - this module used to implement the routing in single page applications.
+            - ngRoute Module is the predefined module given by angular framework.
+            - ngRoute Module is deprecated module.
+
+    5. ui.router
+            - this module used to implement the routing in single page applications.
+            - ui.router module is the 3rd module.
+            - now a days all most all the projects using ui.router module to
+              implement routing in single page application.
+
+Ex.
+    implement the angular application with the following features
+    1. form validations
+    2. routing in single page application by using ui.router module
+    3. storages support
+    4. animations support
+index.html
+----------
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+    <script
+       src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js">
+    </script>
+    <script>
+         var app = angular.module("myApp",["ngMessages",
+                                            "ui.router",
+                                            "ngStorage",
+                                            "ngAnimate"]);
+    </script>
+</html>
+
+
+
+
+
+
+
